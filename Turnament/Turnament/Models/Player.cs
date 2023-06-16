@@ -13,6 +13,6 @@ namespace Turnaments.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int age { get; set; }
-        public int NumberOfGames { get; set; }
+        public int NumberOfGoals { get; set; }
     }
 }

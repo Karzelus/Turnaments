@@ -13,8 +13,11 @@ namespace Turnaments.Models
         public string Name { get; set; }
         public string Shortcut { get; set; }
         public int VictoryNumber { get; set; }
-        public int DrawNumber { get; set; }
+        //public int DrawNumber { get; set; }
         public int LossesNumber { get; set; }
         public List<Player> Players { get; set; }
+        public int LossesGoals { get; set; }
+        public int ScoredGoals { get; set; }
+        public string Image { get; set; }
     }
 }

@@ -10,10 +10,10 @@ namespace Turnaments.Models
     {
         public int Id { get; set; }
         public Team FirstTeam { get; set; }
-        public Team SeckondTeam { get; set; }
-        public List<Referee> Referees { get; set; }
+        public Team SecondTeam { get; set; }
+        public Referee Referee { get; set; }
         public string Winner { get; set; }
         public string Losser { get; set; }
-        public bool IsDraw { get; set; }
+        //public bool IsDraw { get; set; }
     }
 }

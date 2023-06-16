@@ -12,7 +12,7 @@ namespace Turnaments.Models
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public int TeamsNumber { get; set; }
-        public int GamesNumber { get; set; }
+        //public int GamesNumber { get; set; }
         public List<Team> Teams { get; set; }
         public List<Referee> Referees { get;}
         public Team Winner { get; set; }
