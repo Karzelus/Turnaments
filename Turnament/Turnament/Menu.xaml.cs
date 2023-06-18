@@ -36,6 +36,6 @@ namespace Turnament
             SelectTournament st = new SelectTournament();
             this.Hide();
             st.Show();
-        }
+        }            
     }
 }
