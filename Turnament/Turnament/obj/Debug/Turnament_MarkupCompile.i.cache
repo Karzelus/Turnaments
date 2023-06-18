@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\obj\Debug\
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\
 Turnament
 none
 false
 DEBUG;TRACE
-C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\App.xaml
-1219584333
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\App.xaml
+4-1316850268
 
-17795775125
-16-2144240845
-MainWindow.xaml;
+20-1399508722
+16568175603
+CreateTournament.xaml;MainWindow.xaml;Menu.xaml;SelectTournament.xaml;
 
-False
+True
 

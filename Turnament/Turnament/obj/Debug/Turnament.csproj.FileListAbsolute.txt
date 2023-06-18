@@ -43,3 +43,9 @@ C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\obj\Debug\Turnament.cs
 C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\obj\Debug\Turnament.exe
 C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\obj\Debug\Turnament.pdb
 C:\Users\Dawid\Desktop\wpf\Turnaments\Turnament\Turnament\obj\Debug\Turnament.Migrations.Init1.resources
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\CreateTournament.g.cs
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Menu.g.cs
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\SelectTournament.g.cs
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\CreateTournament.baml
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Menu.baml
+C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\SelectTournament.baml

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Turnament"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="#292929"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name="Dane" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
