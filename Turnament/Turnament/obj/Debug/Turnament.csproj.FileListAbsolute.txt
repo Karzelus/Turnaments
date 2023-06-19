@@ -127,12 +127,3 @@ C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Deb
 =======
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\App.baml
 >>>>>>> FrontendowyDawid
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Drabinka.g.cs
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\History.g.cs
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Ranking.g.cs
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Teams.g.cs
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\App.baml
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Drabinka.baml
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\History.baml
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Ranking.baml
-C:\Users\Dawid\Desktop\Wpf\Turnaments\Turnament\Turnament\obj\Debug\Teams.baml

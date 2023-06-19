@@ -136,7 +136,8 @@
             <TextBlock Text="Nazwa Turnieju" Foreground="White"/>
             <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Ladder" Width="80" Height="40"
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickBracket"/>
+                        Margin="10,20,0,0" Click="BtnClickBracket">
+            </Button>
             <Button x:Name="RankingBtn" Style="{DynamicResource RoundedButton}" Content="Ranking" Width="80" Height="40" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                         Margin="10,10,0,0" Click="BtnClickRanking"/>
@@ -146,18 +147,9 @@
             <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="80" Height="40" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                         Margin="10,10,0,0" Click="BtnClickHistory"/>
-            <Button x:Name="RenameBtn" Style="{DynamicResource RoundedButton}" Content="Rename" Width="80" Height="40" 
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickHistory"/>
-            <Button x:Name="RefereeBtn" Style="{DynamicResource RoundedButton}" Content="Referee" Width="80" Height="40" 
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickHistory"/>
-            <Button Style="{DynamicResource RoundedButton}" Content="Delete Tournament" Width="80" Height="40" 
-                        VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,20,0,0" Click="BtnClickExitTournament"/>
             <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="80" Height="40" 
                         VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickExitTournament"/>
+                        Margin="10,180,0,0" Click="BtnClickExitTournament"/>
         </StackPanel>
         
         <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden" />
