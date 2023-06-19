@@ -37,9 +37,5 @@ namespace Turnament
             Menu menu = new Menu();
             menu.Show();
         }
-        private void BtnClickExitApp(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }

@@ -7,29 +7,8 @@
         mc:Ignorable="d"
         Title="SelectTournament" Height="450" Width="800"
         Background="#26292B"
-        AllowsTransparency="True"
-        WindowStyle="none"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <ImageBrush x:Key="exitApp"
-                ImageSource="Assets/exit.png"
-                Stretch="None" />
-        <Style x:Key="ExitButton" TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="20" />
-            <Setter Property="Width" Value="20" />
-            <Setter Property="HorizontalAlignment" Value="Right" />
-            <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
-                            BorderThickness="0"
-                            Background="{StaticResource exitApp}">
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -115,7 +94,6 @@
                 Margin="20,10,200,20"
                 BorderThickness="0" Click="BtnClickBack"
                 Background="#5F7ADB" Foreground="#FEF4F4"/>
-        <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Margin="780,0,0,0" />
-        <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="0,0,0,0" Click="BtnClickExitApp"/>
+
     </Grid>
 </Window>

@@ -7,45 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Background="#26292B"
-        AllowsTransparency="True"
-        WindowStyle="none"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <Storyboard x:Key="rotateScenerioBasketball">
-            <DoubleAnimation Storyboard.TargetName="basketball"
-                             Storyboard.TargetProperty="Angle"
-                             BeginTime="0:0:0" Duration="0:0:5"
-                             From="0" To="360"
-                             AutoReverse="False" RepeatBehavior="Forever" />
-        </Storyboard>
-        <Storyboard x:Key="rotateScenerioVolleyball">
-            <DoubleAnimation Storyboard.TargetName="volleyball"
-                             Storyboard.TargetProperty="Angle"
-                             BeginTime="0:0:0" Duration="0:0:5"
-                             From="0" To="360"
-                             AutoReverse="False" RepeatBehavior="Forever" />
-        </Storyboard>
-        <Storyboard x:Key="rotateScenerioFootball">
-            <DoubleAnimation Storyboard.TargetName="football"
-                             Storyboard.TargetProperty="Angle"
-                             BeginTime="0:0:0" Duration="0:0:5"
-                             From="0" To="360"
-                             AutoReverse="False" RepeatBehavior="Forever" />
-        </Storyboard>
-        <Storyboard x:Key="rotateScenerioTennis">
-            <DoubleAnimation Storyboard.TargetName="tennis"
-                             Storyboard.TargetProperty="Angle"
-                             BeginTime="0:0:0" Duration="0:0:5"
-                             From="0" To="360"
-                             AutoReverse="False" RepeatBehavior="Forever" />
-        </Storyboard>
-        <Storyboard x:Key="rotateScenerioRugby">
-            <DoubleAnimation Storyboard.TargetName="rugby"
-                             Storyboard.TargetProperty="Angle"
-                             BeginTime="0:0:0" Duration="0:0:5"
-                             From="0" To="360"
-                             AutoReverse="False" RepeatBehavior="Forever" />
-        </Storyboard>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -64,26 +27,6 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        
-        <ImageBrush x:Key="exitApp"
-                ImageSource="Assets/exit.png"
-                Stretch="None" />
-        <Style x:Key="ExitButton" TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="20" />
-            <Setter Property="Width" Value="20" />
-            <Setter Property="HorizontalAlignment" Value="Right" />
-            <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
-                            BorderThickness="0"
-                            Background="{StaticResource exitApp}">
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="RoundedButton" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -126,93 +69,24 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="560" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="40" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Background="#2E3239">
-            <TextBlock Text="Nazwa Turnieju" Foreground="White"/>
-            <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Ladder" Width="80" Height="40"
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,20,0,0" Click="BtnClickBracket">
-            </Button>
+        <!--<DataGrid x:Name="Dane" d:ItemsSource="{d:SampleData ItemCount=5}"/>-->
+        <StackPanel>
+            <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Bracket" Width="80" Height="40"
+                    HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                    Margin="10,100,0,0" Click="BtnClickBracket"/>
             <Button x:Name="RankingBtn" Style="{DynamicResource RoundedButton}" Content="Ranking" Width="80" Height="40" 
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickRanking"/>
+                    HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                    Margin="10,10,0,0" Click="BtnClickRanking"/>
             <Button x:Name="TeamsBtn" Style="{DynamicResource RoundedButton}" Content="Teams" Width="80" Height="40" 
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickTeams"/>
+                    HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                    Margin="10,10,0,0" Click="BtnClickTeams"/>
             <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="80" Height="40" 
-                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickHistory"/>
+                    HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                    Margin="10,10,0,0" Click="BtnClickHistory"/>
             <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="80" Height="40" 
-                        VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,180,0,0" Click="BtnClickExitTournament"/>
+                    HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                    Margin="10,70,0,0" Click="BtnClickExitTournament"/>
         </StackPanel>
-        
-        <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden" />
-
-        <StackPanel Grid.Column="2" Background="#2E3239">
-            <Image Source="{StaticResource basketball}" Margin="5,5,5,5" Width="50" Height="50"  >
-                <Image.LayoutTransform>
-                    <RotateTransform x:Name="basketball" Angle="0" />
-                </Image.LayoutTransform>
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="Image.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource rotateScenerioBasketball}" />
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-
-            <Image Source="{StaticResource football}" Margin="5,5,5,5" Width="50" Height="50"  >
-                <Image.LayoutTransform>
-                    <RotateTransform x:Name="football" Angle="0" />
-                </Image.LayoutTransform>
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="Image.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource rotateScenerioFootball}" />
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-
-            <Image Source="{StaticResource volleyball}" Margin="5,5,5,5" Width="50" Height="50"  >
-                <Image.LayoutTransform>
-                    <RotateTransform x:Name="volleyball" Angle="0" />
-                </Image.LayoutTransform>
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="Image.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource rotateScenerioVolleyball}" />
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-
-            <Image Source="{StaticResource tennis}" Margin="5,5,5,5" Width="50" Height="50"  >
-                <Image.LayoutTransform>
-                    <RotateTransform x:Name="tennis" Angle="0" />
-                </Image.LayoutTransform>
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="Image.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource rotateScenerioTennis}" />
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-
-            <Image Source="{StaticResource rugby}" Margin="5,5,5,5" Width="50" Height="50"  >
-                <Image.LayoutTransform>
-                    <RotateTransform x:Name="rugby" Angle="0" />
-                </Image.LayoutTransform>
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="Image.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource rotateScenerioRugby}" />
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-        </StackPanel>
-        <StackPanel Grid.Column="3" Background="#2E3239">
-            <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="20" Height="20" />
-            <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="-20,-20,0,0" Click="BtnClickExitApp"/>
-        </StackPanel>
+        <Frame x:Name="Main" Margin="100,0,0,0" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

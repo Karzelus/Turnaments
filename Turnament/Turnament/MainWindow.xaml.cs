@@ -67,10 +67,5 @@ namespace Turnament
             menu.Show();
 
         }
-
-        private void BtnClickExitApp(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }
