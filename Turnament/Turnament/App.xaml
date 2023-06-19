@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:Turnament"
              StartupUri="Menu.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <BitmapImage x:Key="basketball" UriSource="Assets/basketball.png"></BitmapImage>
+            <BitmapImage x:Key="exit" UriSource="Assets/exit.png"></BitmapImage>
+            <BitmapImage x:Key="history" UriSource="Assets/history.png"></BitmapImage>
+            <BitmapImage x:Key="ladder" UriSource="Assets/ladder.png"></BitmapImage>
+            <BitmapImage x:Key="ranking" UriSource="Assets/ranking.png"></BitmapImage>
+            <BitmapImage x:Key="teams" UriSource="Assets/teams.png"></BitmapImage>
+            <BitmapImage x:Key="football" UriSource="Assets/football.png"></BitmapImage>
+            <BitmapImage x:Key="volleyball" UriSource="Assets/volleyball.png"></BitmapImage>
+            <BitmapImage x:Key="tennis" UriSource="Assets/tennis.png"></BitmapImage>
+            <BitmapImage x:Key="rugby" UriSource="Assets/rugby.png"></BitmapImage>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

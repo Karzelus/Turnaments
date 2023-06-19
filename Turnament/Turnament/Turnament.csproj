@@ -175,6 +175,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\exit.png" />
+    <Resource Include="Assets\history.png" />
+    <Resource Include="Assets\ladder.png" />
+    <Resource Include="Assets\ranking.png" />
+    <Resource Include="Assets\teams.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\basketball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\football.png" />
+    <Resource Include="Assets\rugby.png" />
+    <Resource Include="Assets\tennis.png" />
+    <Resource Include="Assets\volleyball.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
