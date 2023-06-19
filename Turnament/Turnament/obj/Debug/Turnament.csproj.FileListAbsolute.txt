@@ -86,3 +86,4 @@ C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Drabinka.ba
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\History.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Ranking.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Teams.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\App.baml

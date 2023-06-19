@@ -10,6 +10,6 @@
 
     <Grid>
         <TextBlock Text="Ranking" Foreground="White" HorizontalAlignment="Center"
-                   VerticalAlignment="Top" FontSize="25" Margin="35"/>
+                   VerticalAlignment="Top" FontSize="25" Margin="20"/>
     </Grid>
 </Page>
