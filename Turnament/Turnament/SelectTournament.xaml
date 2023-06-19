@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Turnament"
         mc:Ignorable="d"
         Title="SelectTournament" Height="450" Width="800"
-        Background="#292929"
+        Background="#26292B"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">

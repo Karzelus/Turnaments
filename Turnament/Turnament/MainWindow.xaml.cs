@@ -40,7 +40,32 @@ namespace Turnament
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
             con.Close();
-            Dane.ItemsSource = dt.DefaultView;
+            //Dane.ItemsSource = dt.DefaultView;
+        }
+
+        private void BtnClickBracket(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Drabinka();
+        }
+        private void BtnClickRanking(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Ranking();
+        }
+        private void BtnClickTeams(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Teams();
+        }
+        private void BtnClickHistory(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new History();
+        }
+
+        private void BtnClickExitTournament(object sender, RoutedEventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Close();
+            menu.Show();
+
         }
     }
 }
