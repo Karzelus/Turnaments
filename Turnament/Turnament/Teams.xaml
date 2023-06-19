@@ -10,6 +10,35 @@
         
     <Grid>
         <TextBlock Text="Teams" Foreground="White" HorizontalAlignment="Center"
-                   VerticalAlignment="Center" FontSize="25"/>
+                   VerticalAlignment="Top" FontSize="25" Margin="20"/>
+        <ListView x:Name="TeamsListView" HorizontalAlignment="Center" 
+                  VerticalAlignment="Center" Height="200" Width="400"
+                  Background="#5F7ADB" Foreground="#2E3239" BorderThickness="0"  >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused"  Value="true">
+                            <Setter Property="Background" Value="#A2B2EE"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#A2B2EE" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding Shortcut}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

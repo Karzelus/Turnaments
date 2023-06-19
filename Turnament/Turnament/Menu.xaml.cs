@@ -36,6 +36,11 @@ namespace Turnament
             SelectTournament st = new SelectTournament();
             this.Hide();
             st.Show();
-        }            
+        }
+
+        private void BtnClickExit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

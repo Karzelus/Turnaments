@@ -71,22 +71,31 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button Style="{DynamicResource RoundedButton}" Name="CreateTurnamentButton" Grid.Row="0" Content="Create Tournament" MinWidth="100"
-                Margin="10,0,0,0" 
+                Margin="10,10,10,20" 
                 Background="#5F7ADB"
                 Foreground="#FEF4F4"
                 Width="500"
                 Height="60"
                 FontSize="25"
-                VerticalAlignment="Center"
+                VerticalAlignment="Bottom"
                 HorizontalAlignment="Center" Click="BtnClickCreateTournament"/>
         <Button Style="{DynamicResource RoundedButton}" Name="SelectTurnamentButton" Grid.Row="1" Content="Select Tournament" MinWidth="100"
-                Margin="10,0,0,0" 
+                Margin="10,20,10,10" 
                 Background="#5F7ADB"
                 Foreground="#FEF4F4"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Width="500"
                 Height="60"
                 FontSize="25"               
                 HorizontalAlignment="Center" Click="BtnClickSelectTournament"/>
+        <Button Style="{DynamicResource RoundedButton}" Name="ExitButton" Grid.Row="1" Content="Exit" MinWidth="25"               
+                Background="#5F7ADB"
+                Foreground="#FEF4F4"
+                VerticalAlignment="Bottom"
+                Margin="10,10,10,20"
+                Width="100"
+                Height="60"
+                FontSize="25" 
+                HorizontalAlignment="Center" Click="BtnClickExit"/>
     </Grid>
 </Window>

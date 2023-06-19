@@ -10,6 +10,6 @@
 
     <Grid>
         <TextBlock Text="History" Foreground="White" HorizontalAlignment="Center"
-                   VerticalAlignment="Center" FontSize="25"/>
+                   VerticalAlignment="Top" FontSize="25" Margin="35"/>
     </Grid>
 </Page>

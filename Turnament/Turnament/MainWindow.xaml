@@ -46,13 +46,16 @@
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="#A2B2EE"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="#A2B2EE"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#A2B2EE"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
@@ -68,16 +71,16 @@
     <Grid>
         <!--<DataGrid x:Name="Dane" d:ItemsSource="{d:SampleData ItemCount=5}"/>-->
         <StackPanel>
-            <Button Style="{DynamicResource RoundedButton}" Content="Bracket" Width="80" Height="40"
+            <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Bracket" Width="80" Height="40"
                     HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                     Margin="10,100,0,0" Click="BtnClickBracket"/>
-            <Button Style="{DynamicResource RoundedButton}" Content="Ranking" Width="80" Height="40" 
+            <Button x:Name="RankingBtn" Style="{DynamicResource RoundedButton}" Content="Ranking" Width="80" Height="40" 
                     HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                     Margin="10,10,0,0" Click="BtnClickRanking"/>
-            <Button Style="{DynamicResource RoundedButton}" Content="Teams" Width="80" Height="40" 
+            <Button x:Name="TeamsBtn" Style="{DynamicResource RoundedButton}" Content="Teams" Width="80" Height="40" 
                     HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                     Margin="10,10,0,0" Click="BtnClickTeams"/>
-            <Button Style="{DynamicResource RoundedButton}" Content="History" Width="80" Height="40" 
+            <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="80" Height="40" 
                     HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                     Margin="10,10,0,0" Click="BtnClickHistory"/>
             <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="80" Height="40" 
