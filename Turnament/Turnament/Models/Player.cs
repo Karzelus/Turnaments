@@ -9,7 +9,7 @@ namespace Turnaments.Models
     public class Player
     {
         public int Id { get; set; }
-        public int Number { get; set; }
+        public int Number { get; set; } // numer koszulki 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int age { get; set; }

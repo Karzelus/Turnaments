@@ -12,8 +12,8 @@ namespace Turnaments.Models
         public Team FirstTeam { get; set; }
         public Team SecondTeam { get; set; }
         public Referee Referee { get; set; }
-        public string Winner { get; set; }
-        public string Losser { get; set; }
+        public Team Winner { get; set; }
+        public Team Losser { get; set; }
         //public bool IsDraw { get; set; }
     }
 }
