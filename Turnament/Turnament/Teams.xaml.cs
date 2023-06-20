@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -16,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 using Turnaments.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Turnament
 {
@@ -26,33 +29,51 @@ namespace Turnament
     {
         static string connectionString =
                 "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Turnaments;Integrated Security=True;Encrypt=False";
-
-
         SqlConnection con = new SqlConnection(connectionString);
         public Teams()
         {
-            InitializeComponent();
-            LoadGrid();
+            InitializeComponent();           
+            LoadGrid();           
         }
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Teams", con);
+            SqlCommand cmd = new SqlCommand("SELECT Name, Shortcut FROM Teams", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
+            List<Team> teams = new List<Team>();
+            while (reader.Read())
             {
-                string name = reader.GetString(1);
-                string srt = reader.GetString(2);
-                Team team= new Team()
+                string name = reader.GetString(0);
+                string srt = reader.GetString(1);
+                Team team = new Team()
                 {
                     Name = name,
                     Shortcut = srt
                 };
-                TeamsListView.Items.Add(team);
+                teams.Add(team);
             }
             reader.Close();
             con.Close();
+            for(int i = 0; i< teams.Count; i++) 
+            {               
+                RadioButton rb = new RadioButton { Content = teams[i].Name, IsChecked = i == 0,Foreground = Brushes.White};
+                //Tu Logika radio buttonów
+                //rb.Checked += (sender, args) =>
+                //{
+                //    Console.WriteLine("Pressed " + (sender as RadioButton).Tag);
+                //};
+                //rb.Unchecked += (sender, args) => { /* Do stuff */ };
+                MyStackPanel.Children.Add(rb); 
+            }
+        }
+        private void BtnClickSelect(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnClickAddTeam(object sender, RoutedEventArgs e)
+        {                   
         }
     }
 }

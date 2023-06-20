@@ -9,7 +9,7 @@
       Title="Drabinka">
 
     <Grid>
-        <TextBlock Text="Drabinka" Foreground="White" HorizontalAlignment="Center"
+        <TextBlock Text="Bracket" Foreground="White" HorizontalAlignment="Center"
                    VerticalAlignment="Top" FontSize="25" Margin="20"/>
     </Grid>
 </Page>

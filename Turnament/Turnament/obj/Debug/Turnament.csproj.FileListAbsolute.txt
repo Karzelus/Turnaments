@@ -87,3 +87,12 @@ C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\History.bam
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Ranking.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Teams.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\App.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Referee.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Rename.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Referee.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Rename.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddTeam.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddTeam.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddReferee.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddReferee.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\GeneratedInternalTypeHelper.g.cs

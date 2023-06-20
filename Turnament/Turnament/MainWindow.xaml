@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Turnament"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="450" Width="850"
         Background="#26292B"
         AllowsTransparency="True"
         WindowStyle="none"
@@ -96,7 +96,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -127,35 +127,49 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="560" />
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="40" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="#2E3239">
             <TextBlock Text="Nazwa Turnieju" Foreground="White"/>
-            <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Ladder" Width="80" Height="40"
+            <Button x:Name="BracketBtn" Style="{DynamicResource RoundedButton}" Content="Ladder" Width="110" Height="20"
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,20,0,0" Click="BtnClickBracket">
-            </Button>
-            <Button x:Name="RankingBtn" Style="{DynamicResource RoundedButton}" Content="Ranking" Width="80" Height="40" 
+                        Margin="20,20,0,0" Click="BtnClickBracket"/>
+            <Button x:Name="RankingBtn" Style="{DynamicResource RoundedButton}" Content="Ranking" Width="110" Height="20" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickRanking"/>
-            <Button x:Name="TeamsBtn" Style="{DynamicResource RoundedButton}" Content="Teams" Width="80" Height="40" 
+                        Margin="20,10,0,0" Click="BtnClickRanking"/>
+            <Button x:Name="TeamsBtn" Style="{DynamicResource RoundedButton}" Content="Teams" Width="110" Height="20" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickTeams"/>
-            <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="80" Height="40" 
+                        Margin="20,10,0,0" Click="BtnClickTeams"/>
+            <Button x:Name="AddTeamsBtn" Style="{DynamicResource RoundedButton}" Content="Add Teams" Width="110" Height="20" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,10,0,0" Click="BtnClickHistory"/>
-            <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="80" Height="40" 
+                        Margin="20,10,0,0" Click="BtnClickAddTeams"/>
+            <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="110" Height="20" 
+                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                        Margin="20,10,0,0" Click="BtnClickHistory"/>
+            <Button x:Name="RefereeBtn" Style="{DynamicResource RoundedButton}" Content="Referees" Width="110" Height="20" 
+                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                        Margin="20,10,0,0" Click="BtnClickReferee"/>
+            <Button x:Name="AddRefereeBtn" Style="{DynamicResource RoundedButton}" Content="Add Referee" Width="110" Height="20" 
+                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                        Margin="20,10,0,0" Click="BtnClickAddReferee"/>
+            <Button x:Name="RenameBtn" Style="{DynamicResource RoundedButton}" Content="Rename" Width="110" Height="20" 
+                        HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                        Margin="20,10,0,0" Click="BtnClickRename"/>
+            <Button Style="{DynamicResource RoundedButton}" Content="Delete Tournament" Width="110" Height="20" 
                         VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="10,180,0,0" Click="BtnClickExitTournament"/>
+                        Margin="20,30,0,0" Click="BtnClickDeleteTournament"/>
+            <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="110" Height="20" 
+                        VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
+                        Margin="20,10,0,0" Click="BtnClickExitTournament"/>
         </StackPanel>
         
         <Frame Grid.Column="1" x:Name="Main" NavigationUIVisibility="Hidden" />
 
         <StackPanel Grid.Column="2" Background="#2E3239">
-            <Image Source="{StaticResource basketball}" Margin="5,5,5,5" Width="50" Height="50"  >
+            <Image Source="{StaticResource basketball}" Margin="5,10,5,5" Width="50" Height="50"  >
                 <Image.LayoutTransform>
                     <RotateTransform x:Name="basketball" Angle="0" />
                 </Image.LayoutTransform>
@@ -166,7 +180,7 @@
                 </Image.Triggers>
             </Image>
 
-            <Image Source="{StaticResource football}" Margin="5,5,5,5" Width="50" Height="50"  >
+            <Image Source="{StaticResource football}" Margin="5,10,5,5" Width="50" Height="50"  >
                 <Image.LayoutTransform>
                     <RotateTransform x:Name="football" Angle="0" />
                 </Image.LayoutTransform>
@@ -177,7 +191,7 @@
                 </Image.Triggers>
             </Image>
 
-            <Image Source="{StaticResource volleyball}" Margin="5,5,5,5" Width="50" Height="50"  >
+            <Image Source="{StaticResource volleyball}" Margin="5,10,5,5" Width="50" Height="50"  >
                 <Image.LayoutTransform>
                     <RotateTransform x:Name="volleyball" Angle="0" />
                 </Image.LayoutTransform>
@@ -188,7 +202,7 @@
                 </Image.Triggers>
             </Image>
 
-            <Image Source="{StaticResource tennis}" Margin="5,5,5,5" Width="50" Height="50"  >
+            <Image Source="{StaticResource tennis}" Margin="5,10,5,5" Width="50" Height="50"  >
                 <Image.LayoutTransform>
                     <RotateTransform x:Name="tennis" Angle="0" />
                 </Image.LayoutTransform>
@@ -199,7 +213,7 @@
                 </Image.Triggers>
             </Image>
 
-            <Image Source="{StaticResource rugby}" Margin="5,5,5,5" Width="50" Height="50"  >
+            <Image Source="{StaticResource rugby}" Margin="5,10,5,5" Width="50" Height="50"  >
                 <Image.LayoutTransform>
                     <RotateTransform x:Name="rugby" Angle="0" />
                 </Image.LayoutTransform>
