@@ -34,12 +34,6 @@ namespace Turnament
         }
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Players", con);
-            DataTable dt = new DataTable();
-            con.Open();
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
-            con.Close();
             //Dane.ItemsSource = dt.DefaultView;
         }
 

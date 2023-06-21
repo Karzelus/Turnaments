@@ -99,7 +99,7 @@
 
         <TextBlock Grid.Row="1" Text="Tournament Name" HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="15" Foreground="white" Margin="10,5,10,10"/>
-        <TextBox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+        <TextBox x:Name="CreateTournamentName" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                  Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="3" 
