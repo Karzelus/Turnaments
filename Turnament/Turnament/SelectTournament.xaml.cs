@@ -34,9 +34,15 @@ namespace Turnament
 
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            MainWindow mainWindow = new MainWindow(); //Trzeba dodać parametr do okna main window z ID turnieju 
-            mainWindow.Show();        
+            Turnaments.Models.Turnament selectedTurnament = Tournaments.SelectedItem as Turnaments.Models.Turnament;
+            if (selectedTurnament != null)
+            {
+                int selectedId = selectedTurnament.Id;
+
+                this.Hide();
+                MainWindow mainWindow = new MainWindow(selectedId); // Pass the selectedId as a parameter to the MainWindow constructor
+                mainWindow.Show();
+            }
         }
 
         private void BtnClickBack(object sender, RoutedEventArgs e)

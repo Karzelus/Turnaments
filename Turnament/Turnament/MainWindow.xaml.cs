@@ -22,11 +22,11 @@ namespace Turnament
     /// </summary>
     public partial class MainWindow : Window
     {
-        static string connectionString =
-                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Turnaments;Integrated Security=True;Encrypt=False";
-
-
-        SqlConnection con = new SqlConnection(connectionString);
+        public MainWindow(int selectedId)
+        {
+            InitializeComponent();
+            LoadGrid();
+        }
         public MainWindow()
         {
             InitializeComponent();
