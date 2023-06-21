@@ -67,10 +67,9 @@ namespace Turnament
         }
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {
+            Team team = new Team();
+            team.Show();
         }
 
-        private void BtnClickAddTeam(object sender, RoutedEventArgs e)
-        {                   
-        }
     }
 }

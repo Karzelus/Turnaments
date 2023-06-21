@@ -15,23 +15,23 @@ using System.Windows.Shapes;
 namespace Turnament
 {
     /// <summary>
-    /// Logika interakcji dla klasy Team.xaml
+    /// Logika interakcji dla klasy RefereeSelect.xaml
     /// </summary>
-    public partial class Team : Window
+    public partial class RefereeSelect : Window
     {
-        public Team()
+        public RefereeSelect()
         {
             InitializeComponent();
-        }
-
-        private void BtnClickBack(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnClickBack(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

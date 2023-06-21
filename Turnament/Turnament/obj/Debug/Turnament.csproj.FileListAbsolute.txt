@@ -98,3 +98,5 @@ C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddReferee.
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Team.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Team.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.baml

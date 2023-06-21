@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Turnament"
         mc:Ignorable="d"
-        Title="Team" Height="450" Width="800"
+        Title="Team" Height="450" Width="850"
         Background="#26292B"
         AllowsTransparency="True"
         WindowStyle="none"
@@ -167,7 +167,7 @@
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="3" 
                 Content="Back" Height="40" Width="100" Click="BtnClickBack"
                 Background="#5F7ADB" Foreground="#FEF4F4"/>
-        <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Margin="780,0,0,0" />
+        <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Margin="830,0,0,0" />
         <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="0,0,0,0" Click="BtnClickExitApp"/>
     </Grid>
 </Window>
