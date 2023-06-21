@@ -45,11 +45,9 @@ namespace Turnament
             while (reader.Read())
             {
                 string name = reader.GetString(0);
-                string srt = reader.GetString(1);
                 Team team = new Team()
                 {
-                    Name = name,
-                    Shortcut = srt
+                    Name = name
                 };
                 teams.Add(team);
             }
@@ -69,7 +67,6 @@ namespace Turnament
         }
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void BtnClickAddTeam(object sender, RoutedEventArgs e)
