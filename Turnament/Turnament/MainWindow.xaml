@@ -143,7 +143,7 @@
             <Button x:Name="TeamsBtn" Style="{DynamicResource RoundedButton}" Content="Teams" Width="110" Height="20" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                         Margin="20,10,0,0" Click="BtnClickTeams"/>
-            <Button x:Name="AddTeamsBtn" Style="{DynamicResource RoundedButton}" Content="Add Teams" Width="110" Height="20" 
+            <Button x:Name="AddTeamsBtn" Style="{DynamicResource RoundedButton}" Content="Add Team" Width="110" Height="20" 
                         HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                         Margin="20,10,0,0" Click="BtnClickAddTeams"/>
             <Button x:Name="HistoryBtn" Style="{DynamicResource RoundedButton}" Content="History" Width="110" Height="20" 
