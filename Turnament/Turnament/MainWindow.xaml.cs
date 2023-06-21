@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Turnament
 {
@@ -22,12 +24,15 @@ namespace Turnament
     /// </summary>
     public partial class MainWindow : Window
     {
-        int tournamentId;
+        Turnaments.Models.Turnament matchingTurnament;
         public MainWindow(int selectedId)
         {
             InitializeComponent();
             LoadGrid();
-            tournamentId = selectedId;
+            string filePath = @"C:\JSON\turnamentSerialized.json";
+            var jsonData = File.ReadAllText(filePath);
+            List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
+            matchingTurnament= turnamentList.FirstOrDefault(t => t.Id == selectedId);
         }
         public MainWindow()
         {

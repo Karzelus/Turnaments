@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Turnaments.Models;
 
 namespace Turnament
 {
@@ -20,7 +21,7 @@ namespace Turnament
     /// </summary>
     public partial class Referee : Page
     {
-        public Referee()
+        public Referee(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }
