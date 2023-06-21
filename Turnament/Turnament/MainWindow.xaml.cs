@@ -22,10 +22,12 @@ namespace Turnament
     /// </summary>
     public partial class MainWindow : Window
     {
+        int tournamentId;
         public MainWindow(int selectedId)
         {
             InitializeComponent();
             LoadGrid();
+            tournamentId = selectedId;
         }
         public MainWindow()
         {
