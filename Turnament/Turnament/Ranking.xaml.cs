@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class Ranking : Page
     {
-        public Ranking()
+        public Ranking(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

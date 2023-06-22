@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class Drabinka : Page
     {
-        public Drabinka()
+        public Drabinka(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class Rename : Page
     {
-        public Rename()
+        public Rename(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class History : Page
     {
-        public History()
+        public History(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

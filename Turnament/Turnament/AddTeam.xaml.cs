@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class AddTeam : Page
     {
-        public AddTeam()
+        public AddTeam(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

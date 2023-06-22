@@ -46,42 +46,42 @@ namespace Turnament
 
         private void BtnClickBracket(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Drabinka();
+            Main.Content = new Drabinka(matchingTurnament);
         }
 
         private void BtnClickRanking(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Ranking();
+            Main.Content = new Ranking(matchingTurnament);
         }
 
         private void BtnClickTeams(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Teams();
+            Main.Content = new Teams(matchingTurnament);
         }
 
         private void BtnClickHistory(object sender, RoutedEventArgs e)
         {
-            Main.Content = new History();
+            Main.Content = new History(matchingTurnament);
         }
 
         private void BtnClickReferee(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Referee();
+            Main.Content = new Referee(matchingTurnament);
         }
 
         private void BtnClickRename(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Rename();
+            Main.Content = new Rename(matchingTurnament);
         }
         
         private void BtnClickAddTeams(object sender, RoutedEventArgs e)
         {
-            Main.Content = new AddTeam();
+            Main.Content = new AddTeam(matchingTurnament);
         }
 
         private void BtnClickAddReferee(object sender, RoutedEventArgs e)
         {
-            Main.Content = new AddReferee();
+            Main.Content = new AddReferee(matchingTurnament);
         }
 
 

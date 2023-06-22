@@ -20,7 +20,7 @@ namespace Turnament
     /// </summary>
     public partial class AddReferee : Page
     {
-        public AddReferee()
+        public AddReferee(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
         }

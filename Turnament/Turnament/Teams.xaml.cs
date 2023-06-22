@@ -30,7 +30,7 @@ namespace Turnament
         static string connectionString =
                 "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Turnaments;Integrated Security=True;Encrypt=False";
         SqlConnection con = new SqlConnection(connectionString);
-        public Teams()
+        public Teams(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();           
             LoadGrid();           
