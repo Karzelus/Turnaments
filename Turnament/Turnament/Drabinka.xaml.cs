@@ -23,6 +23,16 @@ namespace Turnament
         public Drabinka(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            teamsComboBox1.ItemsSource = turnament.Teams;
+            teamsComboBox2.ItemsSource = turnament.Teams;
+            teamsComboBox3.ItemsSource = turnament.Teams;
+            teamsComboBox4.ItemsSource = turnament.Teams;
+            teamsComboBox5.ItemsSource = turnament.Teams;
+            teamsComboBox6.ItemsSource = turnament.Teams;
+            teamsComboBox7.ItemsSource = turnament.Teams;
+            teamsComboBox8.ItemsSource = turnament.Teams;
+
+            //teamsComboBox.DisplayMemberPath = "TeamName";
         }
 
         private void BtnClickPlayFirst1_4(object sender, RoutedEventArgs e)
