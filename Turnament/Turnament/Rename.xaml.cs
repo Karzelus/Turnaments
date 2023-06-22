@@ -46,6 +46,8 @@ namespace Turnament
   
                 File.WriteAllText(filePath, updatedJsonData);
             }
+            MainWindow mainWindow = new MainWindow(tournamentToEdit.Id);
+            mainWindow.Show();
         }
 
     }

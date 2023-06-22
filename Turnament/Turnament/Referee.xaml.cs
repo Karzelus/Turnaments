@@ -38,5 +38,10 @@ namespace Turnament
                 editReferee.Show();
             }
         }
+
+        private void BtnClickDelete(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

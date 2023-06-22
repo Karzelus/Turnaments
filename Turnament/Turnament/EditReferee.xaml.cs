@@ -53,8 +53,8 @@ namespace Turnament
             }
              string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
             File.WriteAllText(filePath, updatedJsonData);
-            MainWindow mainWindow = new MainWindow(turnamentID);
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow(turnamentID);
+            //mainWindow.Show();
             Close();
         }
 

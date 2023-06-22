@@ -41,5 +41,9 @@ namespace Turnament
             team.Show();
         }
 
+        private void BtnClickDelete(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -189,8 +189,13 @@
                 VerticalAlignment="Bottom" HorizontalAlignment="Left"
                 Margin="100,0,0,15"/>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" 
-                Content="Back" Height="40" Width="100" Click="BtnClickBack"
-                Background="#5F7ADB" Foreground="#FEF4F4"/>
+                Content="Don't save" Height="40" Width="100" Click="BtnClickDontSave"
+                Background="#5F7ADB" Foreground="#FEF4F4"
+                Margin="0,0,200,0"/>
+        <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" 
+                Content="Save" Height="40" Width="100" Click="BtnClickSave"
+                Background="#5F7ADB" Foreground="#FEF4F4"
+                Margin="200,0,0,0"/>
         <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Margin="830,0,0,0" />
         <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="0,0,0,0" Click="BtnClickExitApp"/>
     </Grid>

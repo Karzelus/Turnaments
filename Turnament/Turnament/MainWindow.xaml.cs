@@ -33,6 +33,7 @@ namespace Turnament
             var jsonData = File.ReadAllText(filePath);
             List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
             matchingTurnament= turnamentList.FirstOrDefault(t => t.Id == selectedId);
+            TurnamentName.Text = matchingTurnament.Name;
         }
         public void LoadGrid()
         {
@@ -102,7 +103,6 @@ namespace Turnament
             Menu menu = new Menu();
             this.Close();
             menu.Show();
-
         }
     }
 }

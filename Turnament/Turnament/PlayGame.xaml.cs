@@ -24,10 +24,6 @@ namespace Turnament
             InitializeComponent();
         }
 
-        private void BtnClickBack(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
 
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
         {
@@ -40,6 +36,16 @@ namespace Turnament
         }
 
         private void BtnClickTeam2Score(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnClickDontSave(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnClickSave(object sender, RoutedEventArgs e)
         {
 
         }
