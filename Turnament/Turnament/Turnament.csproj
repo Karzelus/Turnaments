@@ -74,6 +74,8 @@
     <Compile Include="AddTeam.xaml.cs">
       <DependentUpon>AddTeam.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\TeamIdToNameConverter.cs" />
+    <Compile Include="Converters\TeamIdToShortcutConverter.cs" />
     <Compile Include="Drabinka.xaml.cs">
       <DependentUpon>Drabinka.xaml</DependentUpon>
     </Compile>

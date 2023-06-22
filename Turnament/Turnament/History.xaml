@@ -1,9 +1,11 @@
 ﻿<Page x:Class="Turnament.History"
+      
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Turnament"
+      xmlns:converters="clr-namespace:Turnament.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="History">
@@ -97,8 +99,12 @@
                                 <Setter Property="Visibility" Value="Collapsed" />
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding Shortcut}" />
+                        <GridViewColumn Header="Team 1 Name" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToNameConverter}}" />
+                        <GridViewColumn Header="Team 1 Shortcut" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToShortcutConverter}}" />
+                        <GridViewColumn Header="Team 2 Name" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToNameConverter}}" />
+                        <GridViewColumn Header="Team 2 Shortcut" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToShortcutConverter}}" />
+                        <GridViewColumn Header="Team 1 Goals" DisplayMemberBinding="{Binding FirstTeamGoals}" />
+                        <GridViewColumn Header="Team 2 Goals" DisplayMemberBinding="{Binding SecondTeamGoals}" />
                     </GridView>
                 </ListView.View>
             </ListView>

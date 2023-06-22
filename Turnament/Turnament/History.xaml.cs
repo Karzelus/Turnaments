@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Turnament.Converters;
+using Turnaments.Models;
 
 namespace Turnament
 {
@@ -23,6 +25,11 @@ namespace Turnament
         public History(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            TeamIdToNameConverter.Teams = turnament.Teams;
+            TeamIdToShortcutConverter.Teams = turnament.Teams;
+            List<Turnaments.Models.Game> Games = turnament.Games;
+            TeamsListView.ItemsSource = Games;
         }
+
     }
 }
