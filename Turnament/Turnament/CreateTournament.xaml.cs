@@ -31,7 +31,6 @@ namespace Turnament
         private void BtnClickCreate(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MainWindow mainWindow = new MainWindow(); //Trzeba dodać parametr do okna main window z ID turnieju 
             string filePath = @"C:\JSON\turnamentSerialized.json";
             var jsonData = File.ReadAllText(filePath);
             var turnamentList = JsonConvert.DeserializeObject<List< Turnaments.Models.Turnament >> (jsonData)?? new List<Turnaments.Models.Turnament>();
@@ -43,6 +42,7 @@ namespace Turnament
                 TeamsNumber = 0,
             };
             turnamentList.Add( turnament );
+            MainWindow mainWindow = new MainWindow(turnament.Id); 
             string turnamentSerialized = JsonConvert.SerializeObject(turnamentList);
             File.WriteAllText(filePath, turnamentSerialized);
             mainWindow.Show();

@@ -29,7 +29,12 @@ namespace Turnament
 
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {
-
+            Turnaments.Models.Referee selectedReferee = RefereesList.SelectedItem as Turnaments.Models.Referee;
+            if (selectedReferee != null)
+            {
+                RefereeSelect refereeSelect = new RefereeSelect(selectedReferee);
+                refereeSelect.Show();
+            }
         }
     }
 }

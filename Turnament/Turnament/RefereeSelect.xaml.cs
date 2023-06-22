@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+using Turnaments.Models;
 
 namespace Turnament
 {
@@ -19,7 +22,7 @@ namespace Turnament
     /// </summary>
     public partial class RefereeSelect : Window
     {
-        public RefereeSelect()
+        public RefereeSelect(Turnaments.Models.Referee selectedReferee)
         {
             InitializeComponent();
         }
