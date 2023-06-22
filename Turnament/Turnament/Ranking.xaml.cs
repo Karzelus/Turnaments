@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Turnaments.Models;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Turnament
 {
@@ -23,6 +26,9 @@ namespace Turnament
         public Ranking(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            List<Turnaments.Models.Team> Teams = turnament.Teams;
+            List<Turnaments.Models.Team> sortedTeams = Teams.OrderByDescending(team => team.VictoryNumber - team.LossesNumber).ToList();
+            TeamsListView.ItemsSource= sortedTeams;
         }
     }
 }

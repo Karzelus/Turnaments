@@ -99,6 +99,8 @@
                         </GridView.ColumnHeaderContainerStyle>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding Shortcut}" />
+                        <GridViewColumn Header="Wins" DisplayMemberBinding="{Binding VictoryNumber}" />
+                        <GridViewColumn Header="Loses" DisplayMemberBinding="{Binding LossesNumber}" />
                     </GridView>
                 </ListView.View>
             </ListView>

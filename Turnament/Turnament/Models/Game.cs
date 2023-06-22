@@ -9,9 +9,11 @@ namespace Turnaments.Models
     public class Game
     {
         public int Id { get; set; }
-        public Team FirstTeam { get; set; }
-        public Team SecondTeam { get; set; }
-        public Referee Referee { get; set; }
+        public int FirstTeamID { get; set; }
+        public int SecondTeamID { get; set; }
+        public int RefereeID { get; set; }
+        public int FirstTeamGoals { get; set; }
+        public int SecondTeamGoals { get; set; }
         public string Winner { get; set; }
         public string Losser { get; set; }
         //public bool IsDraw { get; set; }
