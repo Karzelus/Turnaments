@@ -108,17 +108,13 @@
                 <StackPanel Grid.Column="0" Width="200" HorizontalAlignment="Left">
                     <TextBlock Grid.Row="0" Text="Imie:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,40,10,10" Foreground="white"/>
                     <TextBlock Grid.Row="1" Text="Nazwisko:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="0,40,10,10" Foreground="white"/>
-                    <TextBlock Grid.Row="2" Text="Wiek:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,40,10,10" Foreground="white"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Width="200" HorizontalAlignment="Left">
                     <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,40,10,10">
-                        <TextBox Grid.Row="0" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                        <TextBox x:Name="RefereeName" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
                     </Border>
                     <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,40,10,10">
-                        <TextBox Grid.Row="1" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
-                    </Border>
-                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,40,10,10">
-                        <TextBox Grid.Row="2" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                        <TextBox x:Name="RefereeLastName" Grid.Row="1" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
                     </Border>
                 </StackPanel>
             </Grid>

@@ -21,9 +21,11 @@ namespace Turnament
     /// </summary>
     public partial class Referee : Page
     {
+        Turnaments.Models.Turnament turnament;
         public Referee(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            this.turnament = turnament;
             RefereesList.ItemsSource = turnament.Referees;
         }
 
@@ -32,11 +34,9 @@ namespace Turnament
             Turnaments.Models.Referee selectedReferee = RefereesList.SelectedItem as Turnaments.Models.Referee;
             if (selectedReferee != null)
             {
-                RefereeSelect refereeSelect = new RefereeSelect(selectedReferee);
-                refereeSelect.Show();
+                EditReferee editReferee = new EditReferee(selectedReferee, turnament.Id);
+                editReferee.Show();
             }
-            EditReferee editReferee = new EditReferee();
-            editReferee.Show(
         }
     }
 }

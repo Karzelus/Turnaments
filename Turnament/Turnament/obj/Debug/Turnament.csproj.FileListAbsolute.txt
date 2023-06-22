@@ -157,3 +157,5 @@ C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Deb
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\PlayGame.baml
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.baml
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\EditReferee.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\EditReferee.baml
