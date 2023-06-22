@@ -27,9 +27,6 @@ namespace Turnament
     /// </summary>
     public partial class Teams : Page
     {
-        static string connectionString =
-                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Turnaments;Integrated Security=True;Encrypt=False";
-        SqlConnection con = new SqlConnection(connectionString);
         public Teams(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();           
@@ -37,33 +34,6 @@ namespace Turnament
         }
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("SELECT Name, Shortcut FROM Teams", con);
-            DataTable dt = new DataTable();
-            con.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            List<Team> teams = new List<Team>();
-            while (reader.Read())
-            {
-                string name = reader.GetString(0);
-                Team team = new Team()
-                {
-                    Name = name
-                };
-                teams.Add(team);
-            }
-            reader.Close();
-            con.Close();
-            for(int i = 0; i< teams.Count; i++) 
-            {               
-                RadioButton rb = new RadioButton { Content = teams[i].Name, IsChecked = i == 0,Foreground = Brushes.White};
-                //Tu Logika radio buttonów
-                //rb.Checked += (sender, args) =>
-                //{
-                //    Console.WriteLine("Pressed " + (sender as RadioButton).Tag);
-                //};
-                //rb.Unchecked += (sender, args) => { /* Do stuff */ };
-                MyStackPanel.Children.Add(rb); 
-            }
         }
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {

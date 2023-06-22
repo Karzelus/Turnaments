@@ -148,3 +148,11 @@ C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Deb
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\Turnament.csproj.CopyComplete
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\Turnament.exe
 C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\Turnament.pdb
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\Player.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\PlayGame.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.baml
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\Player.baml
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\PlayGame.baml
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.baml

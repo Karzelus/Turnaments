@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+using Turnaments.Models;
 
 namespace Turnament
 {
@@ -20,14 +23,29 @@ namespace Turnament
     /// </summary>
     public partial class Rename : Page
     {
+        int turnamentID;
         public Rename(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            turnamentID = turnament.Id;
+           
         }
 
         private void BtnClickCreate(object sender, RoutedEventArgs e)
         {
+            string filePath = @"C:\JSON\turnamentSerialized.json";
+            var jsonData = File.ReadAllText(filePath);
+            List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
+            Turnaments.Models.Turnament tournamentToEdit = turnamentList.FirstOrDefault(t => t.Id == turnamentID);
+            if (tournamentToEdit != null)
+            {
 
+                tournamentToEdit.Name = RenameValue.Text;
+
+                string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
+  
+                File.WriteAllText(filePath, updatedJsonData);
+            }
         }
 
     }

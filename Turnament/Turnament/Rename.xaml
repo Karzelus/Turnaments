@@ -79,7 +79,7 @@
         <Border Grid.Row="1" Background="White" CornerRadius="20"
                  Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Center"
                  Margin="0,0,0,0">
-        <TextBox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+        <TextBox x:Name="RenameValue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
                  Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                  Margin="0,30,0,80"/>
         </Border>
