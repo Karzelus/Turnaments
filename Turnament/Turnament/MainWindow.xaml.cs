@@ -87,6 +87,15 @@ namespace Turnament
 
         private void BtnClickDeleteTournament(object sender, RoutedEventArgs e)
         {
+            string filePath = @"C:\JSON\turnamentSerialized.json";
+            var jsonData = File.ReadAllText(filePath);
+            List<Turnaments.Models.Turnament> tournamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
+            tournamentList.RemoveAll(tournament => tournament.Id == matchingTurnament.Id);
+            string updatedJsonData = JsonConvert.SerializeObject(tournamentList, Formatting.Indented);
+            File.WriteAllText(filePath, updatedJsonData);
+            Menu menu = new Menu();
+            this.Close();
+            menu.Show();
 
         }
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
