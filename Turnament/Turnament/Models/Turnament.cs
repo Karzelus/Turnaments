@@ -14,7 +14,7 @@ namespace Turnaments.Models
         public int TeamsNumber { get; set; }
         //public int GamesNumber { get; set; }
         public List<Team> Teams { get; set; }
-        public List<Referee> Referees { get;}
+        public List<Referee> Referees { get; set; }
         public Team Winner { get; set; }
     }
 }
