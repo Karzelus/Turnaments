@@ -34,11 +34,6 @@ namespace Turnament
             List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
             matchingTurnament= turnamentList.FirstOrDefault(t => t.Id == selectedId);
         }
-        public MainWindow()
-        {
-            InitializeComponent();
-            LoadGrid();
-        }
         public void LoadGrid()
         {
             //Dane.ItemsSource = dt.DefaultView;
