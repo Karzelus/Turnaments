@@ -59,6 +59,8 @@ namespace Turnament
                 tournamentToEdit.Referees= Referees; 
                 string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
                 File.WriteAllText(filePath, updatedJsonData);
+                MainWindow mainWindow = new MainWindow(tournamentToEdit.Id);
+                mainWindow.Show();
             }
         }
     }
