@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Turnaments.Models;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Turnament
 {
@@ -42,6 +45,21 @@ namespace Turnament
         private void BtnClickDelete(object sender, RoutedEventArgs e)
         {
 
-        }
+            Turnaments.Models.Referee selectedReferee = RefereesList.SelectedItem as Turnaments.Models.Referee;
+            if (selectedReferee != null)
+            {
+                string filePath = @"C:\JSON\turnamentSerialized.json";
+                var jsonData = File.ReadAllText(filePath);
+
+                List<Turnaments.Models.Turnament> tournamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
+                Turnaments.Models.Turnament matchingTournament = tournamentList.FirstOrDefault(tournament => tournament.Id ==turnament.Id);
+                 List<Turnaments.Models.Referee> refereeList = matchingTournament.Referees;
+                refereeList.RemoveAll(r => r.Id == selectedReferee.Id);
+                string updatedJsonData = JsonConvert.SerializeObject(tournamentList, Formatting.Indented);
+                File.WriteAllText(filePath, updatedJsonData);
+                MainWindow mainWindow = new MainWindow(turnament.Id);
+                mainWindow.Show();
+            }
+        }    
     }
 }

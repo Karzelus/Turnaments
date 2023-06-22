@@ -25,6 +25,7 @@ namespace Turnament
     public partial class AddReferee : Page
     {
         int turnamentID;
+        int maxId = -1;
         public AddReferee(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
@@ -49,9 +50,13 @@ namespace Turnament
                 {
                     Referees = new List<Turnaments.Models.Referee>();
                 }
+                if (tournamentToEdit.Referees.Count > 0)
+                {
+                    maxId = tournamentToEdit.Referees.Max(referee => referee.Id);
+                }
                 Turnaments.Models.Referee newReferee = new Turnaments.Models.Referee()
                 {
-                    Id = Referees.Count,
+                    Id = maxId+1,
                     FirstName = FirstNameValue.Text,
                     LastName = LastNameValue.Text,
                 };
