@@ -10,25 +10,33 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Turnament
 {
     /// <summary>
-    /// Logika interakcji dla klasy Referee.xaml
+    /// Logika interakcji dla klasy EditReferee.xaml
     /// </summary>
-    public partial class Referee : Page
+    public partial class EditReferee : Window
     {
-        public Referee()
+        public EditReferee()
         {
             InitializeComponent();
         }
 
-        private void BtnClickSelect(object sender, RoutedEventArgs e)
+        private void BtnClickBack(object sender, RoutedEventArgs e)
         {
-            EditReferee editReferee = new EditReferee();
-            editReferee.Show();
+            Close();
+        }
+
+        private void BtnClickChangeData(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnClickExitApp(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

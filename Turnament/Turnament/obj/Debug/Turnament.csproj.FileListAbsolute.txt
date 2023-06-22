@@ -105,3 +105,5 @@ C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Player.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Player.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditReferee.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditReferee.baml

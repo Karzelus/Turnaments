@@ -77,6 +77,9 @@
     <Compile Include="EditPlayer.xaml.cs">
       <DependentUpon>EditPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditReferee.xaml.cs">
+      <DependentUpon>EditReferee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditReferee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
