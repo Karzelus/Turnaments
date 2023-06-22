@@ -35,6 +35,8 @@ namespace Turnament
                 RefereeSelect refereeSelect = new RefereeSelect(selectedReferee);
                 refereeSelect.Show();
             }
+            EditReferee editReferee = new EditReferee();
+            editReferee.Show(
         }
     }
 }
