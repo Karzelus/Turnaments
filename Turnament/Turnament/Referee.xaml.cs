@@ -24,6 +24,7 @@ namespace Turnament
         public Referee(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            RefereesList.ItemsSource = turnament.Referees;
         }
 
         private void BtnClickSelect(object sender, RoutedEventArgs e)

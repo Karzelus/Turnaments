@@ -76,34 +76,28 @@
                    VerticalAlignment="Top" FontSize="25" Margin="20"/>
         <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
                  Height="220" Width="420" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <ListView Grid.Row="1" x:Name="TeamsListView" HorizontalAlignment="Center" 
-                  VerticalAlignment="Center" Height="200" Width="400"
-                  Background="#2E3239" Foreground="white" BorderThickness="0"  >
+            <ListView x:Name="RefereesList" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+          Height="200" Width="400" ItemsSource="{Binding refereesList}"
+          Background="#2E3239" Foreground="White" BorderThickness="0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    </GridView>
+                </ListView.View>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Background" Value="Transparent"/>
                         <Style.Triggers>
-                            <Trigger Property="IsFocused"  Value="true">
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="#A2B2EE"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#A2B2EE" />
+                                <Setter Property="Background" Value="#A2B2EE"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </ListView.ItemContainerStyle>
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding Shortcut}" />
-                    </GridView>
-                </ListView.View>
             </ListView>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" 
