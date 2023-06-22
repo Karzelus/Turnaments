@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,23 +29,23 @@ namespace Turnament
     /// </summary>
     public partial class Teams : Page
     {
+        private Turnaments.Models.Turnament turnament;
+
         public Teams(Turnaments.Models.Turnament turnament)
         {
-            InitializeComponent();           
-            LoadGrid();           
+            InitializeComponent();
+            TeamsListView.ItemsSource = turnament.Teams;
+            this.turnament = turnament;
         }
-        public void LoadGrid()
-        {
-        }
+
         private void BtnClickSelect(object sender, RoutedEventArgs e)
         {
-            Team team = new Team();
-            team.Show();
-        }
-
-        private void BtnClickDelete(object sender, RoutedEventArgs e)
-        {
-
+            Turnaments.Models.Team selectedTeam = TeamsListView.SelectedItem as Turnaments.Models.Team;
+            if (selectedTeam != null)
+            {
+                Team team = new Team(selectedTeam, this.turnament);
+                team.Show();
+            }
         }
     }
 }

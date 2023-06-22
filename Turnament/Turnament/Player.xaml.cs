@@ -19,9 +19,23 @@ namespace Turnament
     /// </summary>
     public partial class Player : Window
     {
-        public Player()
+        private Turnaments.Models.Player selectedPlayer;
+        private Turnaments.Models.Team team;
+        private Turnaments.Models.Turnament turnament;
+
+        public Player(Turnaments.Models.Player selectedPlayer, Turnaments.Models.Team team, Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            this.selectedPlayer = selectedPlayer;
+            this.team = team;
+            this.turnament = turnament;
+
+            Name.Text = selectedPlayer.FirstName + " " + selectedPlayer.LastName;
+            FirstName.Text = selectedPlayer.FirstName;
+            LastName.Text = selectedPlayer.LastName;
+            Age.Text = selectedPlayer.Age.ToString();
+            Number.Text = selectedPlayer.Number.ToString();
+            NumberOfGoals.Text = selectedPlayer.NumberOfGoals.ToString();
         }
 
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
@@ -32,14 +46,14 @@ namespace Turnament
         private void BtnClickBack(object sender, RoutedEventArgs e)
         {
             Close();
-            Team team = new Team();
+            Team team = new Team(this.team, this.turnament);
             team.Show();
         }
 
         private void BtnClickChangeData(object sender, RoutedEventArgs e)
         {
             Close();
-            EditPlayer editPlayer = new EditPlayer();
+            EditPlayer editPlayer = new EditPlayer(this.selectedPlayer, this.team, this.turnament);
             editPlayer.Show();
         }
     }
