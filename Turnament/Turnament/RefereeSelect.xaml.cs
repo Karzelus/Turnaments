@@ -10,25 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Turnament
 {
     /// <summary>
-    /// Logika interakcji dla klasy Rename.xaml
+    /// Logika interakcji dla klasy RefereeSelect.xaml
     /// </summary>
-    public partial class Rename : Page
+    public partial class RefereeSelect : Window
     {
-        public Rename(Turnaments.Models.Turnament turnament)
+        public RefereeSelect()
         {
             InitializeComponent();
         }
 
-        private void BtnClickCreate(object sender, RoutedEventArgs e)
+        private void BtnClickExitApp(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
+        private void BtnClickBack(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

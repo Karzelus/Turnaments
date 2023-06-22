@@ -77,14 +77,26 @@
     <Compile Include="Drabinka.xaml.cs">
       <DependentUpon>Drabinka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditPlayer.xaml.cs">
+      <DependentUpon>EditPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Player.xaml.cs">
+      <DependentUpon>Player.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayGame.xaml.cs">
+      <DependentUpon>PlayGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ranking.xaml.cs">
       <DependentUpon>Ranking.xaml</DependentUpon>
     </Compile>
     <Compile Include="Referee.xaml.cs">
       <DependentUpon>Referee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefereeSelect.xaml.cs">
+      <DependentUpon>RefereeSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rename.xaml.cs">
       <DependentUpon>Rename.xaml</DependentUpon>
@@ -114,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="History.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,11 +153,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Player.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlayGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ranking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Referee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefereeSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -214,7 +242,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\exit.png" />
     <Resource Include="Assets\history.png" />
     <Resource Include="Assets\ladder.png" />
     <Resource Include="Assets\ranking.png" />
@@ -228,6 +255,9 @@
     <Resource Include="Assets\rugby.png" />
     <Resource Include="Assets\tennis.png" />
     <Resource Include="Assets\volleyball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

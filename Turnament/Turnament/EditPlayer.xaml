@@ -1,11 +1,11 @@
-﻿<Window x:Class="Turnament.Team"
+﻿<Window x:Class="Turnament.EditPlayer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Turnament"
         mc:Ignorable="d"
-        Title="Team" Height="450" Width="850"
+        Title="EditPlayer" Height="450" Width="850"
         Background="#26292B"
         AllowsTransparency="True"
         WindowStyle="none"
@@ -93,85 +93,57 @@
             <RowDefinition Height="60">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="(nazwa drużyny)" HorizontalAlignment="Center" VerticalAlignment="Top"
+        <TextBlock Grid.Row="0" Text="Change Data" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="25" Margin="10,20,10,10" Foreground="white"/>
-        <TextBlock Grid.Row="0" Text="Team Information" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                   FontSize="25" Margin="70,20,10,10" Foreground="white"/>
-        <TextBlock Grid.Row="0" Text="Players" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                   FontSize="25" Margin="10,20,110,10" Foreground="white"/>
 
         <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
-                 Height="220" Width="300" VerticalAlignment="Top" HorizontalAlignment="Left"
+                 Height="250" Width="450" VerticalAlignment="Top" HorizontalAlignment="Center"
                 Margin="10,0,0,0">
-            <ListView Grid.Row="1" x:Name="InformationListView" HorizontalAlignment="Center" 
-                  VerticalAlignment="Top" Height="200" Width="290"
-                  Background="#2E3239" Foreground="white" BorderThickness="0" Margin="0,10,0,0"  >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Background" Value="Transparent" />
-                        <Style.Triggers>
-                            <Trigger Property="IsFocused"  Value="true">
-                                <Setter Property="Background" Value="#A2B2EE"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#A2B2EE" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
-                 Height="220" Width="300" VerticalAlignment="Top" HorizontalAlignment="Right"
-                Margin="0,0,10,0">
-            <ListView Grid.Row="1" x:Name="PlayersListView" HorizontalAlignment="Center" 
-                  VerticalAlignment="Top" Height="200" Width="290"
-                  Background="#2E3239" Foreground="white" BorderThickness="0" Margin="0,10,0,0"  >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Background" Value="Transparent" />
-                        <Style.Triggers>
-                            <Trigger Property="IsFocused"  Value="true">
-                                <Setter Property="Background" Value="#A2B2EE"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#A2B2EE" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+                <StackPanel Grid.Column="0" Width="200" HorizontalAlignment="Left">
+                    <TextBlock Grid.Row="0" Text="Imie:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,12,10,10" Foreground="white"/>
+                    <TextBlock Grid.Row="1" Text="Nazwisko:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,12,10,10" Foreground="white"/>
+                    <TextBlock Grid.Row="2" Text="Wiek:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,12,10,10" Foreground="white"/>
+                    <TextBlock Grid.Row="3" Text="Numer:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,12,10,10" Foreground="white"/>
+                    <TextBlock Grid.Row="4" Text="Liczba goli:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="10,12,10,10" Foreground="white"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Width="200" HorizontalAlignment="Left">
+                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,10,10,10">
+                    <TextBox Grid.Row="0" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                    </Border>
+                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,10,10,10">
+                        <TextBox Grid.Row="1" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                    </Border>
+                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,10,10,10">
+                        <TextBox Grid.Row="2" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                    </Border>
+                    
+                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,4,10,10">
+                        <TextBox Grid.Row="3" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                    </Border>
+                    <Border Background="White" CornerRadius="10" Width="160" Height="30" Margin="-30,2,10,10">
+                        <TextBox Grid.Row="4" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,5"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+
         </Border>
-        <Button Style="{DynamicResource RoundedButton}" Grid.Row="1" 
-                Content="Select" Height="40" Width="100" Click="BtnClickSelect"
+        <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" 
+                Content="Change Data" Height="40" Width="100" Click="BtnClickChangeData"
                 Background="#5F7ADB" Foreground="#FEF4F4"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                Margin="0,0,100,15"/>
+                Margin="0,0,198,15"/>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" 
                 Content="Back" Height="40" Width="100" Click="BtnClickBack"
-                Background="#5F7ADB" Foreground="#FEF4F4"/>
+                Background="#5F7ADB" Foreground="#FEF4F4" Margin="0,0,300,15"
+                VerticalAlignment="Bottom"/>
         <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Height="20" Margin="830,0,0,0" />
-        <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="0,0,0,0" Click="BtnClickExitApp"/>
+        <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="830,0,0,0" Click="BtnClickExitApp" HorizontalAlignment="Left"/>
     </Grid>
 </Window>

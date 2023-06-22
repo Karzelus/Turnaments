@@ -24,5 +24,47 @@ namespace Turnament
         {
             InitializeComponent();
         }
+
+        private void BtnClickPlayFirst1_4(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickPlaySecond1_4(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickPlayThird1_4(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickPlayFourth1_4(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickPlayFirst1_2(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickPlaySecond1_2(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
+
+        private void BtnClickBtnClickPlayFinal(object sender, RoutedEventArgs e)
+        {
+            PlayGame playGame = new PlayGame();
+            playGame.Show();
+        }
     }
 }
