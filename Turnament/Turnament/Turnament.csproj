@@ -208,7 +208,6 @@
     <Compile Include="Models\Referee.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\Turnament.cs" />
-    <Compile Include="Models\TurnamentDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
