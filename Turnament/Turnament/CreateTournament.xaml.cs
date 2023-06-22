@@ -44,7 +44,6 @@ namespace Turnament
                 Name = CreateTournamentName.Text,
                 Id = maxId+1,
                 Date = DateTime.Now,
-                TeamsNumber = 0,
             };
             turnamentList.Add( turnament );
             string turnamentSerialized = JsonConvert.SerializeObject(turnamentList);
