@@ -34,10 +34,15 @@ namespace Turnament
             string filePath = @"C:\JSON\turnamentSerialized.json";
             var jsonData = File.ReadAllText(filePath);
             var turnamentList = JsonConvert.DeserializeObject<List< Turnaments.Models.Turnament >> (jsonData)?? new List<Turnaments.Models.Turnament>();
+            int maxId = 0;
+            if (turnamentList.Count > 0)
+            {
+                maxId = turnamentList.Max(tournament => tournament.Id);
+            }
             Turnaments.Models.Turnament turnament = new Turnaments.Models.Turnament()
             {
                 Name = CreateTournamentName.Text,
-                Id = turnamentList.Count,
+                Id = maxId+1,
                 Date = DateTime.Now,
                 TeamsNumber = 0,
             };
