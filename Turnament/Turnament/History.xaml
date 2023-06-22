@@ -74,9 +74,9 @@
         <TextBlock Grid.Row="0" Text="History" Foreground="White" HorizontalAlignment="Center"
                    VerticalAlignment="Top" FontSize="25" Margin="20"/>
         <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
-                 Height="310" Width="420" VerticalAlignment="Top" HorizontalAlignment="Center">
+                 Height="310" Width="340" VerticalAlignment="Top" HorizontalAlignment="Center">
             <ListView Grid.Row="1" x:Name="TeamsListView" HorizontalAlignment="Center" 
-                  VerticalAlignment="Top" Height="300" Width="400"
+                  VerticalAlignment="Top" Height="300" Width="300"
                   Background="#2E3239" Foreground="white" BorderThickness="0" Margin="0,5,0,0" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -94,19 +94,22 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Team 1 Name" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToNameConverter}}" />
-                        <GridViewColumn Header="Team 1 Shortcut" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToShortcutConverter}}" />
-                        <GridViewColumn Header="Team 2 Name" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToNameConverter}}" />
-                        <GridViewColumn Header="Team 2 Shortcut" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToShortcutConverter}}" />
-                        <GridViewColumn Header="Team 1 Goals" DisplayMemberBinding="{Binding FirstTeamGoals}" />
-                        <GridViewColumn Header="Team 2 Goals" DisplayMemberBinding="{Binding SecondTeamGoals}" />
+                        <GridViewColumn Header="Team 1" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToNameConverter}}" />
+                        <GridViewColumn Width="30" Header="Srt" DisplayMemberBinding="{Binding FirstTeamID ,Converter={converters:TeamIdToShortcutConverter}}" />
+                        <GridViewColumn Header="Score" DisplayMemberBinding="{Binding FirstTeamGoals}" />
+                        <GridViewColumn Header="Score" DisplayMemberBinding="{Binding SecondTeamGoals}" />
+                        <GridViewColumn Width="30" Header="Srt" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToShortcutConverter}}" />
+                        <GridViewColumn Header="Team 2" DisplayMemberBinding="{Binding SecondTeamID,Converter={converters:TeamIdToNameConverter}}" />
                     </GridView>
                 </ListView.View>
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#26292B"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </ListView.Resources>
             </ListView>
         </Border>
     </Grid>

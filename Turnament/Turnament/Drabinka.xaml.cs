@@ -34,7 +34,7 @@ namespace Turnament
 
             //teamsComboBox.DisplayMemberPath = "TeamName";
         }
-
+        
         private void BtnClickPlayFirst1_4(object sender, RoutedEventArgs e)
         {
             PlayGame playGame = new PlayGame();

@@ -68,39 +68,30 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="220"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="80">
+            </RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-        </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Create Team" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="25" Margin="10,20,10,10" Foreground="white" />
-
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="100,0,0,0">
-            <TextBlock Text="Team Name" HorizontalAlignment="Center" VerticalAlignment="Top"
-                   FontSize="15" Foreground="white" Margin="10,5,10,10" />
-            <Border Background="White" CornerRadius="20"
-                 Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Center"
-                 Margin="0,0,0,60">
-                <TextBox BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top"
+        <TextBlock Grid.Row="1" Text="Team Name" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   FontSize="15" Foreground="white" Margin="120,0,0,0" />
+        <Border  Grid.Row="1" Background="White" CornerRadius="20"
+                 Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Left"
+                 Margin="50,0,0,60">
+            <TextBox BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top"
                  Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0"
-                         x:Name="Name" />
-            </Border>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="3" Margin="0,0,100,0">
-            <TextBlock Text="Team Shortcut" HorizontalAlignment="Center" VerticalAlignment="Top"
-                   FontSize="15" Foreground="white" Margin="10,5,10,10" />
-            <Border Background="White" CornerRadius="20"
-                 Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Center"
-                 Margin="0,0,0,60">
-                <TextBox BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top"
-                 Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0"
-                         x:Name="Shortcut" />
-            </Border>
-        </StackPanel>
+                 x:Name="Name" />
+        </Border>
+        
+        <TextBlock Grid.Row="1" Text="Team Shortcut" HorizontalAlignment="Right" VerticalAlignment="Top"
+                   FontSize="15" Foreground="white" Margin="0,0,110,0" />
+        <Border Grid.Row="1" Background="White" CornerRadius="20"
+                 Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Right"
+                 Margin="0,0,50,60">
+            <TextBox BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top"
+                 Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0"                        x:Name="Shortcut" />
+        </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="3" Grid.Column="1"
                 Content="Create" Height="40" Width="100" Click="BtnClickCreate"
                 Background="#5F7ADB" Foreground="#FEF4F4" VerticalAlignment="Top" />

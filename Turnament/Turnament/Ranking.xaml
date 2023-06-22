@@ -72,9 +72,9 @@
         <TextBlock Grid.Row="0" Text="Ranking" Foreground="White" HorizontalAlignment="Center"
                    VerticalAlignment="Top" FontSize="25" Margin="20"/>
         <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
-                 Height="320" Width="420" VerticalAlignment="Top" HorizontalAlignment="Center">
+                 Height="320" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center">
             <ListView Grid.Row="1" x:Name="TeamsListView" HorizontalAlignment="Center" 
-                  VerticalAlignment="Top" Height="300" Width="400"
+                  VerticalAlignment="Top" Height="300" Width="280" HorizontalContentAlignment="Center"
                   Background="#2E3239" Foreground="white" BorderThickness="0" Margin="0,10,0,0"  >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -92,17 +92,19 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding Shortcut}" />
                         <GridViewColumn Header="Wins" DisplayMemberBinding="{Binding VictoryNumber}" />
                         <GridViewColumn Header="Loses" DisplayMemberBinding="{Binding LossesNumber}" />
                     </GridView>
                 </ListView.View>
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#26292B"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Foreground" Value="White"/>
+                    </Style>
+                </ListView.Resources>
             </ListView>
         </Border>
     </Grid>
