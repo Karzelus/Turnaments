@@ -93,12 +93,16 @@
                    FontSize="25"
                    Margin="10,20,10,10"
                    Foreground="White"/>
-        <ListBox x:Name="Tournaments" HorizontalAlignment="Center"
+        <Border Background="#2E3239" CornerRadius="20"
+                 Height="220" Width="650" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <ListBox x:Name="Tournaments" HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Height="200"
                  Width="600"
                  Foreground="white"
-                 BorderThickness="0"/>
+                 BorderThickness="0"
+                 Background="#2E3239"/>
+        </Border>
         <Button Style="{DynamicResource RoundedButton}" Content="Select"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"

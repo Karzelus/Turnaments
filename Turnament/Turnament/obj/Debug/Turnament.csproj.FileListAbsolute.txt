@@ -95,8 +95,13 @@ C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddTeam.g.c
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddTeam.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddReferee.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\AddReferee.baml
-C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Team.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Team.baml
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.g.cs
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\RefereeSelect.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\PlayGame.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\PlayGame.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Player.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.g.cs
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\Player.baml
+C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\obj\Debug\EditPlayer.baml

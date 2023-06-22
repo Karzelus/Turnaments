@@ -15,29 +15,30 @@ using System.Windows.Shapes;
 namespace Turnament
 {
     /// <summary>
-    /// Logika interakcji dla klasy Team.xaml
+    /// Logika interakcji dla klasy EditPlayer.xaml
     /// </summary>
-    public partial class Team : Window
+    public partial class EditPlayer : Window
     {
-        public Team()
+        public EditPlayer()
         {
             InitializeComponent();
         }
 
-        private void BtnClickSelect(object sender, RoutedEventArgs e)
-        {
-            Close();
-            Player player= new Player();
-            player.Show();
-        }
-        
-        private void BtnClickBack(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnClickBack(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnClickChangeData(object sender, RoutedEventArgs e)
+        {
+            Close();
+            Player player = new Player();
+            player.Show();
         }
     }
 }

@@ -99,8 +99,13 @@
 
         <TextBlock Grid.Row="1" Text="Tournament Name" HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="15" Foreground="white" Margin="10,5,10,10"/>
-        <TextBox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                 Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Border Grid.Row="1" Background="White" CornerRadius="20"
+                 Height="60" Width="220" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Margin="0,0,0,0">
+            <TextBox Grid.Row="1" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                 Width="200" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                     Margin="0,0,0,10"/>
+        </Border>
 
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="3" 
                 Content="Create" Height="40" Width="100" Margin="200,0,20,20" Click="BtnClickCreate"

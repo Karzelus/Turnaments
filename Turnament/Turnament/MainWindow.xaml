@@ -64,8 +64,11 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        
+
         <ImageBrush x:Key="exitApp"
+                ImageSource="Assets/exit.png"
+                Stretch="None" />
+        <ImageBrush x:Key="exitRedApp"
                 ImageSource="Assets/exit.png"
                 Stretch="None" />
         <Style x:Key="ExitButton" TargetType="{x:Type Button}">
@@ -160,7 +163,7 @@
                         Margin="20,10,0,0" Click="BtnClickRename"/>
             <Button Style="{DynamicResource RoundedButton}" Content="Delete Tournament" Width="110" Height="20" 
                         VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
-                        Margin="20,30,0,0" Click="BtnClickDeleteTournament"/>
+                        Margin="20,120,0,0" Click="BtnClickDeleteTournament"/>
             <Button Style="{DynamicResource RoundedButton}" Content="Exit Tournament" Width="110" Height="20" 
                         VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#5F7ADB" Foreground="#FEF4F4"
                         Margin="20,10,0,0" Click="BtnClickExitTournament"/>
@@ -225,7 +228,7 @@
             </Image>
         </StackPanel>
         <StackPanel Grid.Column="3" Background="#2E3239">
-            <Image Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="20" Height="20" />
+            <Image x:Name="ExitButtonImg" Source="Assets/exit.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="20" Height="20" />
             <Button x:Name="ExitButton" Style="{StaticResource ExitButton}" Margin="-20,-20,0,0" Click="BtnClickExitApp"/>
         </StackPanel>
     </Grid>

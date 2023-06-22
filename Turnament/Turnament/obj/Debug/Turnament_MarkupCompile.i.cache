@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Dawid\Desktop\WPF2\Turnaments\Turnament\Turnament\App.xaml
-14-1645724858
+17-354553330
 
-30244487316
+33-989664736
 16-2109459391
-AddReferee.xaml;AddTeam.xaml;CreateTournament.xaml;Drabinka.xaml;History.xaml;MainWindow.xaml;Menu.xaml;Ranking.xaml;Referee.xaml;RefereeSelect.xaml;Rename.xaml;SelectTournament.xaml;Team.xaml;Teams.xaml;
+AddReferee.xaml;AddTeam.xaml;CreateTournament.xaml;Drabinka.xaml;EditPlayer.xaml;History.xaml;MainWindow.xaml;Menu.xaml;Player.xaml;PlayGame.xaml;Ranking.xaml;Referee.xaml;RefereeSelect.xaml;Rename.xaml;SelectTournament.xaml;Team.xaml;Teams.xaml;
 
 True
 
