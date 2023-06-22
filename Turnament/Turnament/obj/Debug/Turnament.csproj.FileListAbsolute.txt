@@ -220,3 +220,5 @@ C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turname
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turnament.csproj.CopyComplete
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turnament.exe
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turnament.pdb
+C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.g.cs
+C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.baml

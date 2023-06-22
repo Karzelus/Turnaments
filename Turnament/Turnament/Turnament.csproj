@@ -68,6 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddPlayer.xaml.cs">
+      <DependentUpon>AddPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddReferee.xaml.cs">
       <DependentUpon>AddReferee.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
     <Compile Include="Teams.xaml.cs">
       <DependentUpon>Teams.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddReferee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
