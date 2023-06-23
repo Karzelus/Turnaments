@@ -183,6 +183,11 @@
         <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
                  Height="50" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center"
                 Margin="0,0,0,0">
+            <ComboBox x:Name="teamsComboBox1" ItemsSource="{Binding turnament.Referees}" DisplayMemberPath="Name">
+                <ComboBox.IsEnabled>
+                    <Binding Path="CanSelectTeams[0]" RelativeSource="{RelativeSource AncestorType=Page}" Mode="OneWay" />
+                </ComboBox.IsEnabled>
+            </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="1" 
                 Content="Dodaj Gola" Height="40" Width="100" Click="BtnClickTeam2Score"
