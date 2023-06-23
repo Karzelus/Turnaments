@@ -95,9 +95,9 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Game" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="25" Margin="10,20,10,10" Foreground="white"/>
-        <TextBlock Grid.Row="0" Text="(Team 1)" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+        <TextBlock Grid.Row="0" x:Name="FirstTeamName" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
                    FontSize="25" Margin="100,20,10,10" Foreground="white"/>
-        <TextBlock Grid.Row="0" Text="(Team 2)" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        <TextBlock Grid.Row="0" x:Name="SecondTeamName" Text="{Binding Name}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                    FontSize="25" Margin="10,20,110,10" Foreground="white"/>
         <TextBlock Grid.Row="0" Text="Referee" HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    FontSize="25" Margin="0,0,0,10" Foreground="white"/>
@@ -180,13 +180,14 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <Border Grid.Row="1" Background="#2E3239" CornerRadius="20"
-                 Height="50" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center"
+        <Border Grid.Row="1" Background="#ebebeb" CornerRadius="20"
+                 Height="50" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center"
                 Margin="0,0,0,0">
-            <ComboBox x:Name="Referees" ItemsSource="{Binding turnament.Referees}" DisplayMemberPath="Name">
+            <ComboBox x:Name="Referees" BorderThickness="0" Width="90" Height="40" ItemsSource="{Binding turnament.Referees}" DisplayMemberPath="LastName">
                 <ComboBox.IsEnabled>
                     <Binding Path="CanSelectTeams[0]" RelativeSource="{RelativeSource AncestorType=Page}" Mode="OneWay" />
                 </ComboBox.IsEnabled>
+
             </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="1" 

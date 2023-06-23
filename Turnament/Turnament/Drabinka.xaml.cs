@@ -90,7 +90,7 @@ namespace Turnament
                     this.canSelectTeams = bracketState.canSelectTeams;
                     for (int i = 0; i <= 7; i++)
                     {
-                        if (canSelectTeams[i] == false) lockedTeams.Add(turnament.Teams[i]);
+                        //if (canSelectTeams[i] == false) lockedTeams.Add(turnament.Teams[i]);
                     }
                     teamTextBox1.Text = Winner1;
                     teamTextBox2.Text = Winner2;

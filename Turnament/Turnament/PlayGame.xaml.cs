@@ -51,6 +51,8 @@ namespace Turnament
             Referees.ItemsSource=validTurnament.Referees;
             TeamGoals2.Text = Game.SecondTeamGoals.ToString();
             TeamGoals1.Text= Game.FirstTeamGoals.ToString();
+            FirstTeamName.Text = team1.Name;
+            SecondTeamName.Text = team2.Name;
         }
         //Turnament.Models Player
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
