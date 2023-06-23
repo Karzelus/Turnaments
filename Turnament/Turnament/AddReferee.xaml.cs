@@ -50,22 +50,25 @@ namespace Turnament
                 {
                     Referees = new List<Turnaments.Models.Referee>();
                 }
-                if (tournamentToEdit.Referees.Count > 0)
+                if (tournamentToEdit.Referees != null)
                 {
-                    maxId = tournamentToEdit.Referees.Max(referee => referee.Id);
+                    if (tournamentToEdit.Referees.Count > 0)
+                    {
+                        maxId = tournamentToEdit.Referees.Max(referee => referee.Id);
+                    }
                 }
-                Turnaments.Models.Referee newReferee = new Turnaments.Models.Referee()
-                {
-                    Id = maxId+1,
-                    FirstName = FirstNameValue.Text,
-                    LastName = LastNameValue.Text,
-                };
-                Referees.Add(newReferee);
-                tournamentToEdit.Referees= Referees; 
-                string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
-                File.WriteAllText(filePath, updatedJsonData);
-                MainWindow mainWindow = new MainWindow(tournamentToEdit.Id);
-                mainWindow.Show();
+                    Turnaments.Models.Referee newReferee = new Turnaments.Models.Referee()
+                    {
+                        Id = maxId + 1,
+                        FirstName = FirstNameValue.Text,
+                        LastName = LastNameValue.Text,
+                    };
+                    Referees.Add(newReferee);
+                    tournamentToEdit.Referees = Referees;
+                    string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
+                    File.WriteAllText(filePath, updatedJsonData);
+                    MainWindow mainWindow = new MainWindow(tournamentToEdit.Id);
+                    mainWindow.Show();
             }
         }
     }
