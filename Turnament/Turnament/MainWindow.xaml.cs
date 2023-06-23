@@ -29,10 +29,15 @@ namespace Turnament
         {
             InitializeComponent();
             LoadGrid();
+            UpdateJsonData(selectedId);
+       
+        }
+        public void UpdateJsonData(int selectedId)
+        {
             string filePath = @"C:\JSON\turnamentSerialized.json";
             var jsonData = File.ReadAllText(filePath);
             List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
-            matchingTurnament= turnamentList.FirstOrDefault(t => t.Id == selectedId);
+            matchingTurnament = turnamentList.FirstOrDefault(t => t.Id == selectedId);
             TurnamentName.Text = matchingTurnament.Name;
         }
         public void LoadGrid()
@@ -42,41 +47,49 @@ namespace Turnament
 
         private void BtnClickBracket(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new Drabinka(matchingTurnament);
         }
 
         private void BtnClickRanking(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new Ranking(matchingTurnament);
         }
 
         private void BtnClickTeams(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new Teams(matchingTurnament);
         }
 
         private void BtnClickHistory(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new History(matchingTurnament);
         }
 
         private void BtnClickReferee(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new Referee(matchingTurnament);
         }
 
         private void BtnClickRename(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new Rename(matchingTurnament);
         }
         
         private void BtnClickAddTeams(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new AddTeam(matchingTurnament);
         }
 
         private void BtnClickAddReferee(object sender, RoutedEventArgs e)
         {
+            UpdateJsonData(matchingTurnament.Id);
             Main.Content = new AddReferee(matchingTurnament);
         }
 

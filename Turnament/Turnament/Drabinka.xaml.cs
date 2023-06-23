@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
+using Turnament.Models;
 
 namespace Turnament
 {
@@ -27,11 +30,38 @@ namespace Turnament
         public event PropertyChangedEventHandler PropertyChanged;
         public string Winner1, Winner2, Winner3, Winner4, Winner5, Winner6, Winner7;
         List<Turnaments.Models.Team> lockedTeams = new List<Turnaments.Models.Team>();
+        string filePath;
 
+
+        public void SaveToFile(string filePath)
+        {
+            filePath = @"C:\JSON\turnamentTemp" + turnament.Id + ".json";
+        BracketState bracketState = new BracketState()
+            {
+                turnamentId = turnament.Id,
+                Winner1= Winner1,
+                Winner2= Winner2,
+                Winner3= Winner3,
+                Winner4= Winner4,
+                Winner5= Winner5,
+                Winner6= Winner6,
+                Winner7= Winner7,
+                canSelectTeams= canSelectTeams,
+            };
+            string json = JsonConvert.SerializeObject(bracketState);
+            File.WriteAllText(filePath, json);
+        }
+        public BracketState LoadFromFile()
+        {
+            filePath = @"C:\JSON\turnamentTemp" + turnament.Id + ".json";
+             string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<BracketState>(json);
+        }
 
         public Drabinka(Turnaments.Models.Turnament turnament)
         {
             InitializeComponent();
+            this.turnament = turnament;
             teamsComboBox1.ItemsSource = turnament.Teams;
             teamsComboBox2.ItemsSource = turnament.Teams;
             teamsComboBox3.ItemsSource = turnament.Teams;
@@ -44,7 +74,33 @@ namespace Turnament
             {
                 canSelectTeams.Add(true);
             }
-            this.turnament = turnament;
+            filePath = @"C:\JSON\turnamentTemp" + turnament.Id + ".json";
+            if (File.Exists(filePath))
+            {
+                if (LoadFromFile() != null)
+                {
+                    BracketState bracketState = LoadFromFile();
+                    this.Winner1 = bracketState.Winner1;
+                    this.Winner2 = bracketState.Winner2;
+                    this.Winner3 = bracketState.Winner3;
+                    this.Winner4 = bracketState.Winner4;
+                    this.Winner5 = bracketState.Winner5;
+                    this.Winner6 = bracketState.Winner6;
+                    this.Winner7 = bracketState.Winner7;
+                    this.canSelectTeams = bracketState.canSelectTeams;
+                    for (int i = 0; i <= 7; i++)
+                    {
+                        if (canSelectTeams[i] == false) lockedTeams.Add(turnament.Teams[i]);
+                    }
+                    teamTextBox1.Text = Winner1;
+                    teamTextBox2.Text = Winner2;
+                    teamTextBox3.Text = Winner3;
+                    teamTextBox4.Text = Winner4;
+                    teamTextBox5.Text = Winner5;
+                    teamTextBox6.Text = Winner6;
+                    teamTextBox7.Text = Winner7;
+                }
+            }
             DataContext = this;
         }
         
@@ -59,15 +115,15 @@ namespace Turnament
                     PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
                     playGame.SaveButtonClicked += (s, args) =>
                     {
-                        int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                        int index2 = turnament.Teams.IndexOf(selectedTeam2);
-                        canSelectTeams[index1] = false;
+                     
+                        canSelectTeams[0] = false;
+                        canSelectTeams[1] = false;
                         lockedTeams.Add(selectedTeam1);
                         lockedTeams.Add(selectedTeam2);
-                        canSelectTeams[index2] = false;
                         Winner1 = playGame.Winner;
                         teamTextBox1.Text = Winner1;
                         OnPropertyChanged(nameof(CanSelectTeams));
+                        SaveToFile(filePath);
                         UpdateComboBoxesEnabledState();
                     };
                     playGame.ShowDialog();
@@ -102,19 +158,19 @@ namespace Turnament
                 {
                     playGame.SaveButtonClicked += (s, args) =>
             {
-                int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                canSelectTeams[2] = false;
+                canSelectTeams[3] = false;
                 lockedTeams.Add(selectedTeam1);
                 lockedTeams.Add(selectedTeam2);
-                canSelectTeams[index1] = false;
-                canSelectTeams[index2] = false;
                 Winner2 = playGame.Winner;
                 teamTextBox2.Text = Winner2;
                 OnPropertyChanged(nameof(CanSelectTeams));
                 UpdateComboBoxesEnabledState();
+                SaveToFile(filePath);
             };
                     playGame.ShowDialog();
                 }
+
         }
     }
 
@@ -129,16 +185,16 @@ namespace Turnament
                     PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
                     playGame.SaveButtonClicked += (s, args) =>
                     {
-                        int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                        int index2 = turnament.Teams.IndexOf(selectedTeam2);
+
+                        canSelectTeams[4] = false;
+                        canSelectTeams[5] = false;
                         lockedTeams.Add(selectedTeam1);
                         lockedTeams.Add(selectedTeam2);
-                        canSelectTeams[index1] = false;
-                        canSelectTeams[index2] = false;
                         Winner3 = playGame.Winner;
                         teamTextBox3.Text = Winner3;
                         OnPropertyChanged(nameof(CanSelectTeams));
                         UpdateComboBoxesEnabledState();
+                        SaveToFile(filePath);
                     };
                     playGame.ShowDialog();
                 }
@@ -156,16 +212,15 @@ namespace Turnament
                 {
                     playGame.SaveButtonClicked += (s, args) =>
                 {
-                    int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                    int index2 = turnament.Teams.IndexOf(selectedTeam2);
                     lockedTeams.Add(selectedTeam1);
                     lockedTeams.Add(selectedTeam2);
-                    canSelectTeams[index1] = false;
-                    canSelectTeams[index2] = false;
+                    canSelectTeams[6] = false;
+                    canSelectTeams[7] = false;
                     Winner4 = playGame.Winner;
                     teamTextBox4.Text = Winner4;
                     OnPropertyChanged(nameof(CanSelectTeams));
                     UpdateComboBoxesEnabledState();
+                    SaveToFile(filePath);
                 };
                     playGame.ShowDialog();
                 }
@@ -199,6 +254,7 @@ namespace Turnament
                 Winner5 = playGame.Winner;
                 teamTextBox5.Text = Winner5;
                 OnPropertyChanged(nameof(CanSelectTeams));
+                SaveToFile(filePath);
             };
             playGame.ShowDialog();
         }
@@ -214,6 +270,7 @@ namespace Turnament
                 Winner6 = playGame.Winner;
                 teamTextBox6.Text = Winner6;
                 OnPropertyChanged(nameof(CanSelectTeams));
+                SaveToFile(filePath);
             };
             playGame.ShowDialog();
         }
@@ -228,6 +285,7 @@ namespace Turnament
                 Winner7 = playGame.Winner;
                 teamTextBox7.Text = Winner7;
                 OnPropertyChanged(nameof(CanSelectTeams));
+                SaveToFile(filePath);
             };
             playGame.ShowDialog();
         }

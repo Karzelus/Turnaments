@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
 using Turnaments.Models;
-
+using System.IO;
 namespace Turnament
 {
     /// <summary>
@@ -80,7 +80,6 @@ namespace Turnament
             }
             
         }
-
         private void BtnClickDontSave(object sender, RoutedEventArgs e)
         {
             Close();
@@ -88,12 +87,36 @@ namespace Turnament
 
         private void BtnClickSave(object sender, RoutedEventArgs e)
         {
-            if(Game.SecondTeamGoals!=Game.FirstTeamGoals)
+            string filePath = @"C:\JSON\turnamentSerialized.json";
+            var jsonData = File.ReadAllText(filePath);
+            List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
+            Turnaments.Models.Turnament tournamentToEdit = turnamentList.FirstOrDefault(t => t.Id == validTurnament.Id);
+            tournamentToEdit.Games.Add(Game);
+            Turnaments.Models.Team teamToEdit1=tournamentToEdit.Teams.FirstOrDefault(t=>t.Name==Team1.Name);
+            Turnaments.Models.Team teamToEdit2 =tournamentToEdit.Teams.FirstOrDefault(t => t.Name == Team2.Name);
+            teamToEdit1.LostGoals += Game.SecondTeamGoals;
+            teamToEdit1.ScoredGoals += Game.FirstTeamGoals;
+            teamToEdit2.LostGoals += Game.SecondTeamGoals;
+            teamToEdit2.ScoredGoals += Game.FirstTeamGoals;
+
+            if (Game.SecondTeamGoals!=Game.FirstTeamGoals)
             {
-                if (Game.SecondTeamGoals > Game.FirstTeamGoals) Game.Winner = Team2.Name;
-                else Game.Winner = Team1.Name;
+                if (Game.SecondTeamGoals > Game.FirstTeamGoals)
+                {
+                    Game.Winner = Team2.Name;
+                    teamToEdit2.VictoryNumber++;
+                    teamToEdit1.LossesNumber++;
+                }
+                else
+                {
+                    Game.Winner = Team1.Name;
+                    teamToEdit1.VictoryNumber++;
+                    teamToEdit2.LossesNumber++;
+                }                    
                 Winner = Game.Winner;
             }
+            string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
+            File.WriteAllText(filePath, updatedJsonData);
             SaveButtonClicked?.Invoke(this, EventArgs.Empty);
             Close();
     }
