@@ -118,9 +118,9 @@ namespace Turnament
                     teamToEdit2.LossesNumber++;
                 }                    
                 Winner = Game.Winner;
+                string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
+                File.WriteAllText(filePath, updatedJsonData);
             }
-            string updatedJsonData = JsonConvert.SerializeObject(turnamentList, Formatting.Indented);
-            File.WriteAllText(filePath, updatedJsonData);
             SaveButtonClicked?.Invoke(this, EventArgs.Empty);
             Close();
     }
