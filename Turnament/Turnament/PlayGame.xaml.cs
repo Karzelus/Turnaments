@@ -48,16 +48,15 @@ namespace Turnament
             };
             Team1Players.ItemsSource = team1.Players;
             Team2Players.ItemsSource = team2.Players;
+            Referees.ItemsSource=validTurnament.Referees;
             TeamGoals2.Text = Game.SecondTeamGoals.ToString();
             TeamGoals1.Text= Game.FirstTeamGoals.ToString();
         }
-
-
+        //Turnament.Models Player
         private void BtnClickExitApp(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void BtnClickTeam1Score(object sender, RoutedEventArgs e)
         {
             Turnaments.Models.Player selectedPlayer = Team1Players.SelectedItem as Turnaments.Models.Player;
@@ -87,6 +86,9 @@ namespace Turnament
 
         private void BtnClickSave(object sender, RoutedEventArgs e)
         {
+            Turnaments.Models.Referee selectedReferee = Referees.SelectedItem as Turnaments.Models.Referee;
+            if (selectedReferee != null) Game.RefereeID = selectedReferee.Id;
+            else Game.RefereeID = 0;
             string filePath = @"C:\JSON\turnamentSerialized.json";
             var jsonData = File.ReadAllText(filePath);
             List<Turnaments.Models.Turnament> turnamentList = JsonConvert.DeserializeObject<List<Turnaments.Models.Turnament>>(jsonData);
