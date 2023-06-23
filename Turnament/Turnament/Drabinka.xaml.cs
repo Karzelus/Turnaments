@@ -26,7 +26,8 @@ namespace Turnament
         private List<bool> canSelectTeams = new List<bool>();
         public event PropertyChangedEventHandler PropertyChanged;
         public string Winner1, Winner2, Winner3, Winner4, Winner5, Winner6, Winner7;
-      
+        List<Turnaments.Models.Team> lockedTeams = new List<Turnaments.Models.Team>();
+
 
         public Drabinka(Turnaments.Models.Turnament turnament)
         {
@@ -49,23 +50,28 @@ namespace Turnament
         
         private void BtnClickPlayFirst1_4(object sender, RoutedEventArgs e)
         {
-            if (teamsComboBox1.SelectedItem != null && teamsComboBox2.SelectedItem != null && teamsComboBox1.SelectedItem!=teamsComboBox2.SelectedItem)
+            if (teamsComboBox1.SelectedItem != null && teamsComboBox2.SelectedItem != null && teamsComboBox1.SelectedItem != teamsComboBox2.SelectedItem)
             {
                 Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
                 Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
-                PlayGame playGame = new PlayGame(selectedTeam1,selectedTeam2,turnament);
-                playGame.SaveButtonClicked += (s, args) =>
+                if (!IsTeamLocked(selectedTeam1) && !IsTeamLocked(selectedTeam2))
                 {
-                    int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                    int index2 = turnament.Teams.IndexOf(selectedTeam2);
-                    canSelectTeams[index1] = false;
-                    canSelectTeams[index2] = false;
-                    Winner1 = playGame.Winner;
-                    teamTextBox1.Text = Winner1;
-                    OnPropertyChanged(nameof(CanSelectTeams));
-                    UpdateComboBoxesEnabledState();
-                };
-                playGame.ShowDialog();
+                    PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+                    playGame.SaveButtonClicked += (s, args) =>
+                    {
+                        int index1 = turnament.Teams.IndexOf(selectedTeam1);
+                        int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                        canSelectTeams[index1] = false;
+                        lockedTeams.Add(selectedTeam1);
+                        lockedTeams.Add(selectedTeam2);
+                        canSelectTeams[index2] = false;
+                        Winner1 = playGame.Winner;
+                        teamTextBox1.Text = Winner1;
+                        OnPropertyChanged(nameof(CanSelectTeams));
+                        UpdateComboBoxesEnabledState();
+                    };
+                    playGame.ShowDialog();
+                }
             }
         }
         private void UpdateComboBoxesEnabledState()
@@ -79,6 +85,10 @@ namespace Turnament
             teamsComboBox7.IsEnabled = canSelectTeams[6];
             teamsComboBox8.IsEnabled = canSelectTeams[7];
         }
+        private bool IsTeamLocked(Turnaments.Models.Team team)
+        {
+            return lockedTeams.Contains(team);
+        }
 
         private void BtnClickPlaySecond1_4(object sender, RoutedEventArgs e)
         {
@@ -86,11 +96,16 @@ namespace Turnament
             { 
             Turnaments.Models.Team selectedTeam1 = teamsComboBox3.SelectedItem as Turnaments.Models.Team;
             Turnaments.Models.Team selectedTeam2 = teamsComboBox4.SelectedItem as Turnaments.Models.Team;
+
             PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-            playGame.SaveButtonClicked += (s, args) =>
+                if (!IsTeamLocked(selectedTeam1) && !IsTeamLocked(selectedTeam2))
+                {
+                    playGame.SaveButtonClicked += (s, args) =>
             {
                 int index1 = turnament.Teams.IndexOf(selectedTeam1);
                 int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                lockedTeams.Add(selectedTeam1);
+                lockedTeams.Add(selectedTeam2);
                 canSelectTeams[index1] = false;
                 canSelectTeams[index2] = false;
                 Winner2 = playGame.Winner;
@@ -98,7 +113,8 @@ namespace Turnament
                 OnPropertyChanged(nameof(CanSelectTeams));
                 UpdateComboBoxesEnabledState();
             };
-            playGame.ShowDialog();
+                    playGame.ShowDialog();
+                }
         }
     }
 
@@ -108,19 +124,24 @@ namespace Turnament
             {
                 Turnaments.Models.Team selectedTeam1 = teamsComboBox5.SelectedItem as Turnaments.Models.Team;
                 Turnaments.Models.Team selectedTeam2 = teamsComboBox6.SelectedItem as Turnaments.Models.Team;
-                PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-                playGame.SaveButtonClicked += (s, args) =>
+                if (!IsTeamLocked(selectedTeam1) && !IsTeamLocked(selectedTeam2))
                 {
-                    int index1 = turnament.Teams.IndexOf(selectedTeam1);
-                    int index2 = turnament.Teams.IndexOf(selectedTeam2);
-                    canSelectTeams[index1] = false;
-                    canSelectTeams[index2] = false;
-                    Winner3 = playGame.Winner;
-                    teamTextBox3.Text = Winner3;
-                    OnPropertyChanged(nameof(CanSelectTeams));
-                    UpdateComboBoxesEnabledState();
-                };
-                playGame.ShowDialog();
+                    PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+                    playGame.SaveButtonClicked += (s, args) =>
+                    {
+                        int index1 = turnament.Teams.IndexOf(selectedTeam1);
+                        int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                        lockedTeams.Add(selectedTeam1);
+                        lockedTeams.Add(selectedTeam2);
+                        canSelectTeams[index1] = false;
+                        canSelectTeams[index2] = false;
+                        Winner3 = playGame.Winner;
+                        teamTextBox3.Text = Winner3;
+                        OnPropertyChanged(nameof(CanSelectTeams));
+                        UpdateComboBoxesEnabledState();
+                    };
+                    playGame.ShowDialog();
+                }
             }
         }
 
@@ -131,10 +152,14 @@ namespace Turnament
                 Turnaments.Models.Team selectedTeam1 = teamsComboBox7.SelectedItem as Turnaments.Models.Team;
                 Turnaments.Models.Team selectedTeam2 = teamsComboBox8.SelectedItem as Turnaments.Models.Team;
                 PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-                playGame.SaveButtonClicked += (s, args) =>
+                if (!IsTeamLocked(selectedTeam1) && !IsTeamLocked(selectedTeam2))
+                {
+                    playGame.SaveButtonClicked += (s, args) =>
                 {
                     int index1 = turnament.Teams.IndexOf(selectedTeam1);
                     int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                    lockedTeams.Add(selectedTeam1);
+                    lockedTeams.Add(selectedTeam2);
                     canSelectTeams[index1] = false;
                     canSelectTeams[index2] = false;
                     Winner4 = playGame.Winner;
@@ -142,7 +167,8 @@ namespace Turnament
                     OnPropertyChanged(nameof(CanSelectTeams));
                     UpdateComboBoxesEnabledState();
                 };
-                playGame.ShowDialog();
+                    playGame.ShowDialog();
+                }
             }
         }
         public List<bool> CanSelectTeams
