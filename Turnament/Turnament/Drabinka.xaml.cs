@@ -24,6 +24,7 @@ namespace Turnament
         Turnaments.Models.Turnament turnament;
         private List<bool> canSelectTeams = new List<bool>();
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Winner1, Winner2, Winner3, Winner4, Winner5, Winner6, Winner7;
       
 
         public Drabinka(Turnaments.Models.Turnament turnament)
@@ -43,8 +44,6 @@ namespace Turnament
             }
             this.turnament = turnament;
             DataContext = this;
-
-            //teamsComboBox.DisplayMemberPath = "TeamName";
         }
         
         private void BtnClickPlayFirst1_4(object sender, RoutedEventArgs e)
@@ -60,6 +59,8 @@ namespace Turnament
                     int index2 = turnament.Teams.IndexOf(selectedTeam2);
                     canSelectTeams[index1] = false;
                     canSelectTeams[index2] = false;
+                    Winner1 = playGame.Winner;
+                    teamTextBox1.Text = Winner1;
                     OnPropertyChanged(nameof(CanSelectTeams));
                     UpdateComboBoxesEnabledState();
                 };
