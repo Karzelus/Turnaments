@@ -353,66 +353,124 @@
 
         <Border Grid.Row="1" Grid.Column="0" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox1" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox1" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.IsEnabled>
+                    <Binding Path="CanSelectTeams[0]" RelativeSource="{RelativeSource AncestorType=Page}" Mode="OneWay" />
+                </ComboBox.IsEnabled>
+            </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" Grid.Column="0"
                 Content="Play 1/4" Height="20" Width="50" Click="BtnClickPlayFirst1_4"
                 Background="#5F7ADB" Foreground="#FEF4F4" VerticalAlignment="Center"/>
         <Border Grid.Row="3" Grid.Column="0" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox2" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox2" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.IsEnabled>
+                    <Binding Path="CanSelectTeams[1]" RelativeSource="{RelativeSource AncestorType=Page}" Mode="OneWay" />
+                </ComboBox.IsEnabled>
+            </ComboBox>
         </Border>
 
         <Border Grid.Row="5" Grid.Column="0" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox3" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox3" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox3.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="6" Grid.Column="0"
                 Content="Play 1/4" Height="20" Width="50" Click="BtnClickPlaySecond1_4"
                 Background="#5F7ADB" Foreground="#FEF4F4" VerticalAlignment="Center"/>
         <Border Grid.Row="7" Grid.Column="0" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox4" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox4" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox4.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
         </Border>
 
         <Border Grid.Row="1" Grid.Column="8" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox5" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox5" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox5.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="2" Grid.Column="8"
                 Content="Play 1/4" Height="20" Width="50" Click="BtnClickPlayThird1_4"
                 Background="#5F7ADB" Foreground="#FEF4F4" VerticalAlignment="Center"/>
         <Border Grid.Row="3" Grid.Column="8" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox6" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox6" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox6.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
         </Border>
 
         <Border Grid.Row="5" Grid.Column="8" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox7" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox8" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox8.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
         </Border>
         <Button Style="{DynamicResource RoundedButton}" Grid.Row="6" Grid.Column="8"
                 Content="Play 1/4" Height="20" Width="50" Click="BtnClickPlayFourth1_4"
                 Background="#5F7ADB" Foreground="#FEF4F4" VerticalAlignment="Center"/>
         <Border Grid.Row="7" Grid.Column="8" Background="#ebebeb" CornerRadius="5"
                  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ComboBox x:Name="teamsComboBox8" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name"
-                      SelectedItem="{Binding SelectedTeam}" Background="White" Foreground="#2E3239"
-                      Width="90" Height="25" BorderThickness="0"/>
+            <ComboBox x:Name="teamsComboBox7" ItemsSource="{Binding turnament.Teams}" DisplayMemberPath="Name">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CanSelectTeams[teamsComboBox7.SelectedItem]}" Value="False">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox> 
         </Border>
 
         <Border Grid.Row="2" Grid.Column="2" Background="#ebebeb" CornerRadius="5"

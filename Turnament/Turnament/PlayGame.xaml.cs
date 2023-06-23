@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using Turnaments.Models;
 
 namespace Turnament
 {
@@ -19,9 +21,35 @@ namespace Turnament
     /// </summary>
     public partial class PlayGame : Window
     {
-        public PlayGame()
+        Turnaments.Models.Team Team1;
+        Turnaments.Models.Team Team2;
+        Turnaments.Models.Turnament validTurnament;
+        Turnaments.Models.Game Game;
+        public string Winner;
+        public event EventHandler SaveButtonClicked;
+        string filePath = @"C:\JSON\turnamentSerialized.json";
+
+        public PlayGame(Turnaments.Models.Team team1, Turnaments.Models.Team team2, Turnaments.Models.Turnament validTurnament)
         {
             InitializeComponent();
+            Team1 = team1;
+            Team2 = team2;
+            this.validTurnament = validTurnament;
+
+            List<Turnaments.Models.Game> gameList = validTurnament.Games;
+            int maxId = gameList.Max(game => game.Id);
+            Game = new Game()
+            {
+                FirstTeamID = Team1.Id,
+                SecondTeamID = Team2.Id,
+                Id = maxId + 1,
+                FirstTeamGoals = 0,
+                SecondTeamGoals = 0,
+            };
+            Team1Players.ItemsSource = team1.Players;
+            Team2Players.ItemsSource = team2.Players;
+            TeamGoals2.Text = Game.SecondTeamGoals.ToString();
+            TeamGoals1.Text= Game.FirstTeamGoals.ToString();
         }
 
 
@@ -32,12 +60,25 @@ namespace Turnament
 
         private void BtnClickTeam1Score(object sender, RoutedEventArgs e)
         {
-
+            Turnaments.Models.Player selectedPlayer = Team1Players.SelectedItem as Turnaments.Models.Player;
+            if (selectedPlayer != null)
+            {
+                selectedPlayer.NumberOfGoals++;
+                Game.FirstTeamGoals++;
+                TeamGoals1.Text = Game.FirstTeamGoals.ToString();
+            }
         }
 
         private void BtnClickTeam2Score(object sender, RoutedEventArgs e)
         {
-
+            Turnaments.Models.Player selectedPlayer = Team2Players.SelectedItem as Turnaments.Models.Player;
+            if (selectedPlayer != null)
+            {
+                selectedPlayer.NumberOfGoals++;
+                Game.SecondTeamGoals++;
+                TeamGoals2.Text = Game.SecondTeamGoals.ToString();
+            }
+            
         }
 
         private void BtnClickDontSave(object sender, RoutedEventArgs e)
@@ -46,6 +87,18 @@ namespace Turnament
         }
 
         private void BtnClickSave(object sender, RoutedEventArgs e)
+        {
+            if(Game.SecondTeamGoals!=Game.FirstTeamGoals)
+            {
+                if (Game.SecondTeamGoals > Game.FirstTeamGoals) Game.Winner = Team2.Name;
+                else Game.Winner = Team1.Name;
+                Winner = Game.Winner;
+            }
+            SaveButtonClicked?.Invoke(this, EventArgs.Empty);
+            Close();
+    }
+
+        private void InformationListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

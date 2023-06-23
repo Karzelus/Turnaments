@@ -222,3 +222,5 @@ C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turname
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\Turnament.pdb
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.g.cs
 C:\Users\Dawid\Documents\GitHub\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.baml
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.g.cs
+C:\Users\eldaw\Downloads\Grzeszcz_Mobilki\Turnaments\Turnament\Turnament\obj\Debug\AddPlayer.baml
