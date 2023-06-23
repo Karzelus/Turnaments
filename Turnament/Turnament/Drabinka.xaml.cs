@@ -82,34 +82,66 @@ namespace Turnament
         private void BtnClickPlaySecond1_4(object sender, RoutedEventArgs e)
         {
             if (teamsComboBox3.SelectedItem != null && teamsComboBox4.SelectedItem != null && teamsComboBox3.SelectedItem != teamsComboBox4.SelectedItem)
+            { 
+            Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
+            Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
+            PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+            playGame.SaveButtonClicked += (s, args) =>
             {
-                Turnaments.Models.Team selectedTeam1 = teamsComboBox3.SelectedItem as Turnaments.Models.Team;
-                Turnaments.Models.Team selectedTeam2 = teamsComboBox4.SelectedItem as Turnaments.Models.Team;
-                PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-                playGame.Show();
-
-            }
+                int index1 = turnament.Teams.IndexOf(selectedTeam1);
+                int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                canSelectTeams[index1] = false;
+                canSelectTeams[index2] = false;
+                Winner2 = playGame.Winner;
+                teamTextBox2.Text = Winner2;
+                OnPropertyChanged(nameof(CanSelectTeams));
+                UpdateComboBoxesEnabledState();
+            };
+            playGame.ShowDialog();
         }
+    }
 
             private void BtnClickPlayThird1_4(object sender, RoutedEventArgs e)
         {
             if (teamsComboBox5.SelectedItem != null && teamsComboBox6.SelectedItem != null && teamsComboBox5.SelectedItem != teamsComboBox6.SelectedItem)
             {
-                Turnaments.Models.Team selectedTeam1 = teamsComboBox5.SelectedItem as Turnaments.Models.Team;
-                Turnaments.Models.Team selectedTeam2 = teamsComboBox6.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
                 PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-                playGame.Show();
+                playGame.SaveButtonClicked += (s, args) =>
+                {
+                    int index1 = turnament.Teams.IndexOf(selectedTeam1);
+                    int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                    canSelectTeams[index1] = false;
+                    canSelectTeams[index2] = false;
+                    Winner3 = playGame.Winner;
+                    teamTextBox3.Text = Winner3;
+                    OnPropertyChanged(nameof(CanSelectTeams));
+                    UpdateComboBoxesEnabledState();
+                };
+                playGame.ShowDialog();
             }
         }
 
         private void BtnClickPlayFourth1_4(object sender, RoutedEventArgs e)
         {
-            if (teamsComboBox1.SelectedItem != null && teamsComboBox2.SelectedItem != null && teamsComboBox1.SelectedItem != teamsComboBox2.SelectedItem)
+            if (teamsComboBox7.SelectedItem != null && teamsComboBox8.SelectedItem != null && teamsComboBox7.SelectedItem != teamsComboBox8.SelectedItem)
             {
-                Turnaments.Models.Team selectedTeam1 = teamsComboBox7.SelectedItem as Turnaments.Models.Team;
-                Turnaments.Models.Team selectedTeam2 = teamsComboBox8.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
                 PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-                playGame.Show();
+                playGame.SaveButtonClicked += (s, args) =>
+                {
+                    int index1 = turnament.Teams.IndexOf(selectedTeam1);
+                    int index2 = turnament.Teams.IndexOf(selectedTeam2);
+                    canSelectTeams[index1] = false;
+                    canSelectTeams[index2] = false;
+                    Winner4 = playGame.Winner;
+                    teamTextBox4.Text = Winner4;
+                    OnPropertyChanged(nameof(CanSelectTeams));
+                    UpdateComboBoxesEnabledState();
+                };
+                playGame.ShowDialog();
             }
         }
         public List<bool> CanSelectTeams
