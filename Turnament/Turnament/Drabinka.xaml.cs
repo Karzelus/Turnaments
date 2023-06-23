@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -83,8 +84,8 @@ namespace Turnament
         {
             if (teamsComboBox3.SelectedItem != null && teamsComboBox4.SelectedItem != null && teamsComboBox3.SelectedItem != teamsComboBox4.SelectedItem)
             { 
-            Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
-            Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
+            Turnaments.Models.Team selectedTeam1 = teamsComboBox3.SelectedItem as Turnaments.Models.Team;
+            Turnaments.Models.Team selectedTeam2 = teamsComboBox4.SelectedItem as Turnaments.Models.Team;
             PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
             playGame.SaveButtonClicked += (s, args) =>
             {
@@ -105,8 +106,8 @@ namespace Turnament
         {
             if (teamsComboBox5.SelectedItem != null && teamsComboBox6.SelectedItem != null && teamsComboBox5.SelectedItem != teamsComboBox6.SelectedItem)
             {
-                Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
-                Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam1 = teamsComboBox5.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam2 = teamsComboBox6.SelectedItem as Turnaments.Models.Team;
                 PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
                 playGame.SaveButtonClicked += (s, args) =>
                 {
@@ -127,8 +128,8 @@ namespace Turnament
         {
             if (teamsComboBox7.SelectedItem != null && teamsComboBox8.SelectedItem != null && teamsComboBox7.SelectedItem != teamsComboBox8.SelectedItem)
             {
-                Turnaments.Models.Team selectedTeam1 = teamsComboBox1.SelectedItem as Turnaments.Models.Team;
-                Turnaments.Models.Team selectedTeam2 = teamsComboBox2.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam1 = teamsComboBox7.SelectedItem as Turnaments.Models.Team;
+                Turnaments.Models.Team selectedTeam2 = teamsComboBox8.SelectedItem as Turnaments.Models.Team;
                 PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
                 playGame.SaveButtonClicked += (s, args) =>
                 {
@@ -164,20 +165,45 @@ namespace Turnament
 
     private void BtnClickPlayFirst1_2(object sender, RoutedEventArgs e)
         {
-           // PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
-          //  playGame.Show();
+            Turnaments.Models.Team selectedTeam1 = turnament.Teams.FirstOrDefault(team => team.Name == Winner1);
+            Turnaments.Models.Team selectedTeam2 = turnament.Teams.FirstOrDefault(team => team.Name == Winner2);
+            PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+            playGame.SaveButtonClicked += (s, args) =>
+            {
+                Winner5 = playGame.Winner;
+                teamTextBox5.Text = Winner5;
+                OnPropertyChanged(nameof(CanSelectTeams));
+            };
+            playGame.ShowDialog();
         }
+
 
         private void BtnClickPlaySecond1_2(object sender, RoutedEventArgs e)
         {
-         //   PlayGame playGame = new PlayGame();
-         //   playGame.Show();
+            Turnaments.Models.Team selectedTeam1 = turnament.Teams.FirstOrDefault(team => team.Name == Winner3);
+            Turnaments.Models.Team selectedTeam2 = turnament.Teams.FirstOrDefault(team => team.Name == Winner4);
+            PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+            playGame.SaveButtonClicked += (s, args) =>
+            {
+                Winner6 = playGame.Winner;
+                teamTextBox6.Text = Winner6;
+                OnPropertyChanged(nameof(CanSelectTeams));
+            };
+            playGame.ShowDialog();
         }
 
         private void BtnClickBtnClickPlayFinal(object sender, RoutedEventArgs e)
         {
-           // PlayGame playGame = new PlayGame();
-          //  playGame.Show();
+            Turnaments.Models.Team selectedTeam1 = turnament.Teams.FirstOrDefault(team => team.Name == Winner5);
+            Turnaments.Models.Team selectedTeam2 = turnament.Teams.FirstOrDefault(team => team.Name == Winner6);
+            PlayGame playGame = new PlayGame(selectedTeam1, selectedTeam2, turnament);
+            playGame.SaveButtonClicked += (s, args) =>
+            {
+                Winner7 = playGame.Winner;
+                teamTextBox7.Text = Winner7;
+                OnPropertyChanged(nameof(CanSelectTeams));
+            };
+            playGame.ShowDialog();
         }
     }
 }
