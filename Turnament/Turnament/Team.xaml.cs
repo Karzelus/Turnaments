@@ -69,7 +69,8 @@ namespace Turnament
 
         private void BtnClickAddPlayer(object sender, RoutedEventArgs e)
         {
-            AddPlayer addPlayer = new AddPlayer();
+            Close();
+            AddPlayer addPlayer = new AddPlayer(this.team, this.turnament);
             addPlayer.Show();
         }
     }
